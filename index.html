@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Right Facility. The Wrong Location. | Georgetown, TX</title>
+  <meta name="description" content="Williamson County paid $75.8 million for a jail site a third of a mile from two schools in Georgetown, TX. Learn the facts and make your voice heard." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Right Facility. The Wrong Location." />
+  <meta property="og:description" content="Williamson County paid $75.8 million for a jail site a third of a mile from two schools. There were cheaper options. Georgetown residents want answers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://notbyourschools.com" />
+  <meta property="og:image" content="https://notbyourschools.com/og-image.png" />
+  <meta property="og:image:secure_url" content="https://notbyourschools.com/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Right Facility. The Wrong Location." />
+  <meta name="twitter:description" content="Williamson County paid $75.8M for a jail site next to two schools when a $7M rural option existed. Georgetown residents want answers." />
+  <meta name="twitter:image" content="https://notbyourschools.com/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:       #0f1f3d;
+      --navy-light: #1a3260;
+      --red:        #b83228;
+      --red-hover:  #d63b30;
+      --cream:      #faf8f4;
+      --tan:        #f0ebe0;
+      --text:       #1a1a1a;
+      --text-muted: #5a5a5a;
+      --border:     #d4cfc4;
+      --white:      #ffffff;
+      --green:      #1e7e4a;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    nav {
+      background: var(--navy);
+      padding: 0.9rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    .nav-logo {
+      color: var(--white);
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.95rem;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-logo span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 0.1rem;
+    }
+
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.62);
+      text-decoration: none;
+      font-size: 0.79rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    @media (max-width: 580px) { .nav-links { display: none; } }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 4.5rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -55deg, transparent, transparent 48px,
+        rgba(255,255,255,0.018) 48px, rgba(255,255,255,0.018) 49px
+      );
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 36px;
+      background: linear-gradient(to bottom right, transparent 49%, var(--tan) 50%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 660px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.69rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 6.5vw, 3.25rem);
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.015em;
+    }
+
+    .hero h1 em { font-style: italic; color: rgba(255,255,255,0.52); }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.76);
+      max-width: 540px;
+      margin-bottom: 2rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.875rem 1.875rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 14px rgba(184,50,40,0.38);
+    }
+
+    .hero-cta:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(184,50,40,0.48);
+    }
+
+    /* ─── STAT STRIP ─────────────────────────────────────── */
+    .stat-strip {
+      background: var(--tan);
+      border-bottom: 1px solid var(--border);
+      padding: 2.25rem 1.5rem 2rem;
+    }
+
+    .stat-grid {
+      max-width: 660px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 2rem;
+    }
+
+    @media (min-width: 480px) { .stat-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .stat { text-align: center; }
+
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      line-height: 1.1;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.71rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.3rem;
+      display: block;
+      line-height: 1.4;
+    }
+
+    /* ─── SHARED SECTION ─────────────────────────────────── */
+    section { padding: 3.25rem 1.5rem; }
+    .section-inner { max-width: 660px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .section-lead {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.78;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .body-copy {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .body-copy strong { color: var(--text); font-weight: 600; }
+
+    /* ─── FACTS ──────────────────────────────────────────── */
+    .facts-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      margin-top: 0.5rem;
+    }
+
+    .fact-card {
+      border-left: 3px solid var(--navy);
+      padding: 1.1rem 1.25rem;
+      background: var(--cream);
+      border-radius: 0 4px 4px 0;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .fact-card.visible { opacity: 1; transform: translateY(0); }
+
+    .fact-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.45rem;
+      line-height: 1.3;
+    }
+
+    .fact-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .fact-card p strong { color: var(--text); font-weight: 600; }
+
+    .fact-source {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.77rem;
+      color: var(--navy);
+      opacity: 0.52;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      font-style: italic;
+    }
+
+    .fact-source:hover { opacity: 1; }
+    .fact-source + .fact-source { margin-left: 0.75rem; }
+
+    /* ─── QUOTE ──────────────────────────────────────────── */
+    .quote-section { background: var(--cream); }
+
+    .quote-block {
+      background: var(--navy);
+      border-radius: 4px;
+      padding: 2rem 1.75rem;
+      margin-top: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-block::before {
+      content: '\201C';
+      position: absolute;
+      top: 0.5rem; left: 1.25rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 6rem;
+      color: rgba(255,255,255,0.055);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .quote-block blockquote {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-block cite {
+      font-size: 0.77rem;
+      color: rgba(255,255,255,0.42);
+      font-style: normal;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    /* ─── ACTION ─────────────────────────────────────────── */
+    .action-section {
+      background: var(--tan);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-cards {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-group-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-top: 0.75rem;
+      display: block;
+      border-top: 1px solid var(--border);
+      margin-top: 0.25rem;
+    }
+
+    .contact-group-label:first-child {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-info h4 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-info span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    .contact-email {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.5rem 1.1rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: background 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .contact-email:hover { background: var(--navy-light); }
+
+    .action-note {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      border-radius: 0 4px 4px 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .action-note strong { color: var(--navy); font-weight: 600; }
+
+    /* ─── EMAIL TEMPLATE ─────────────────────────────────── */
+    .template-section {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+    }
+
+    .template-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.82rem;
+      line-height: 1.82;
+      color: var(--text);
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-top: 1.25rem;
+      overflow-x: auto;
+    }
+
+    .copy-btn {
+      margin-top: 0.875rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 0.6rem 1.35rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .copy-btn:hover { background: var(--navy-light); transform: translateY(-1px); }
+    .copy-btn.copied { background: var(--green); }
+
+    /* ─── URGENCY CALLOUT ────────────────────────────────── */
+    .urgency-section {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem 1.5rem;
+    }
+
+    .urgency-inner {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .urgency-section .section-label {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .urgency-section h2 {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .urgency-body {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    .urgency-body strong { color: var(--white); font-weight: 600; }
+
+    .urgency-cta-row {
+      display: flex;
+      gap: 0.875rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    .urgency-btn {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.825rem 1.625rem;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 2px 12px rgba(184,50,40,0.35);
+    }
+
+    .urgency-btn:hover {
+      background: var(--red-hover);
+      transform: translateY(-1px);
+    }
+
+    .urgency-btn-ghost {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 0.825rem 1.625rem;
+      font-weight: 500;
+      font-size: 0.88rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .urgency-btn-ghost:hover {
+      border-color: rgba(255,255,255,0.6);
+      color: var(--white);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.42);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    footer p + p { margin-top: 0.5rem; }
+
+    .footer-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.68);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    footer a { color: rgba(255,255,255,0.62); transition: color 0.2s; }
+    footer a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bullet { margin: 0 0.4rem; opacity: 0.35; }
+
+    .footer-disclaimer {
+      margin-top: 1rem;
+      font-size: 0.71rem;
+      opacity: 0.32;
+      letter-spacing: 0.04em;
+    }
+
+    hr.divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ─── SITE MAP ───────────────────────────────────────── */
+    .site-map-wrap {
+      margin-top: 1rem;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .site-map-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .site-map-caption {
+      background: var(--navy);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.78rem;
+      line-height: 1.6;
+      padding: 0.65rem 1rem;
+      font-weight: 300;
+    }
+
+    .site-map-caption strong {
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+    }
+
+    /* ─── VIDEO SECTION ─────────────────────────────────── */
+    .video-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 4px;
+      margin-top: 1.25rem;
+      background: #000;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    .video-credit {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .video-credit a {
+      color: var(--navy);
+      opacity: 0.65;
+    }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-inner > * { opacity: 0; animation: fadeUp 0.55s ease forwards; }
+    .hero-inner > *:nth-child(1) { animation-delay: 0.05s; }
+    .hero-inner > *:nth-child(2) { animation-delay: 0.18s; }
+    .hero-inner > *:nth-child(3) { animation-delay: 0.31s; }
+    .hero-inner > *:nth-child(4) { animation-delay: 0.44s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span>Georgetown, TX</span>
+    Justice Complex Concerns
+  </div>
+  <ul class="nav-links">
+    <li><a href="#facts">The Facts</a></li>
+    <li><a href="#action">Take Action</a></li>
+    <li><a href="#email">Email Template</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">Georgetown, TX Residents</span>
+    <h1>The right facility.<br><em>The wrong location.</em></h1>
+    <p>Williamson County is building a new jail one-third of a mile from two schools — after voting against a $7 million rural alternative and paying $75.8 million for this site instead. We support the project. We're asking why it has to be here.</p>
+    <a href="#action" class="hero-cta">Make Your Voice Heard &rarr;</a>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-grid">
+    <div class="stat">
+      <span class="stat-number">$75.8M</span>
+      <span class="stat-label">Paid for this site</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">~$7M</span>
+      <span class="stat-label">Alternative rural site</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">&#8531; mile</span>
+      <span class="stat-label">From two schools</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">1,700</span>
+      <span class="stat-label">Students nearby</span>
+    </div>
+  </div>
+</div>
+
+<!-- FACTS -->
+<section class="facts-section" id="facts">
+  <div class="section-inner">
+    <span class="section-label">Verified Facts</span>
+    <h2>What the public record shows</h2>
+    <p class="section-lead">Every claim below is sourced from official county documents, local news coverage, or statements from public officials. Nothing here is speculation.</p>
+
+    <div class="fact-list">
+
+      <div class="fact-card">
+        <h3>The site is a third of a mile from two schools — and a proposed third</h3>
+        <p>George Wagner Middle School (969 students) is approximately one-third of a mile from the proposed site at 1200 CR 110. Mitchell Elementary (719 students) is under half a mile. Together, nearly <strong>1,700 students</strong> attend these two campuses — an 8 to 10 minute walk from the facility entrance. A proposed IDEA Public School campus is also shown on county planning maps in the same corridor.</p>
+        <div class="site-map-wrap">
+          <img src="siteplan.jpg" alt="Aerial site plan showing the Phase 1 Justice Campus development area (orange), the purchased property (green), and the proximity to the Elementary and Middle School campuses (red box) and a proposed IDEA Public School campus." />
+          <div class="site-map-caption">
+            <strong>County site plan.</strong> Orange: Phase 1 Justice Campus development area. Green: purchased property (253 acres, $75.8M). Blue: existing Wilco government facilities. Red boxes: Elementary &amp; Middle School campuses and proposed IDEA Public School site. Source: <a href="https://www.wilcotx.gov/1801/Justice-Complex-Strategic-Planning" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.7);">Williamson County Justice Complex Strategic Planning &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="fact-card">
+        <h3>The county paid $75.8M when a $7M option existed</h3>
+        <p>In July 2025, commissioners voted <strong>2-2 on whether to even conduct due diligence</strong> on a 481-acre rural site in Florence priced at approximately $7 million — well away from residential areas and schools. That motion failed. Eight months later, commissioners unanimously approved a contract to purchase 253 acres on CR 110 for <strong>$75,819,874</strong>. That is a $68 million difference in land cost, for less acreage, placed next to two schools.</p>
+        <a class="fact-source" href="https://communityimpact.com/austin/georgetown/government/2025/07/15/williamson-county-weighs-7m-florence-property-for-future-jail-complex/" target="_blank" rel="noopener">Source: Community Impact, July 2025 &rarr;</a>
+      </div>
+
+      <div class="fact-card">
+        <h3>This is a jail, not a prison — people are released daily</h3>
+        <p>County jails hold individuals awaiting trial and process same-day bookings. Unlike state prisons, they have a <strong>daily release cadence</strong>. People leave at all hours, often with no transportation arranged. The operational reality of a county jail is fundamentally different from a state correctional facility.</p>
+      </div>
+
+      <div class="fact-card">
+        <h3>There is no infrastructure for released inmates at this location</h3>
+        <p>The CR 110 / SE Inner Loop corridor has no fixed public transit route, no walkable services or businesses, and no support resources. CARTS, the local demand-response transit service, <strong>requires advance reservations and a phone</strong> to schedule a ride. Someone released with no phone and no money cannot use it. They have nowhere to go but into surrounding neighborhoods and school zones.</p>
+      </div>
+
+      <div class="fact-card">
+        <h3>City officials confirmed inmate release is already a documented downtown problem</h3>
+        <p>A City of Georgetown official confirmed in writing that <strong>"what happens to individuals when they leave the jail has been a major issue in our downtown area"</strong> and that the city is actively working with the county on it. Moving the facility to a residential corridor next to schools does not solve the problem — it relocates it.</p>
+      </div>
+
+      <div class="fact-card">
+        <h3>The county can still exit the contract — the option period is open</h3>
+        <p>The purchase contract approved on March 24, 2026 includes a <strong>75-day feasibility period</strong>. That window closes around early June 2026. Until then, the county retains the legal right to walk away from the purchase. The decision is not final. County officials still have the option to reconsider — and residents still have time to make that case before it closes.</p>
+        <a class="fact-source" href="https://www.wilcotx.gov/m/newsflash/Home/Detail/780" target="_blank" rel="noopener">Source: Williamson County purchase announcement &rarr;</a>
+        <a class="fact-source" href="https://communityimpact.com/austin/georgetown/development/2026/03/26/wilco-officials-purchase-253-acres-in-georgetown-for-future-justice-complex/" target="_blank" rel="noopener">Source: Community Impact, March 2026 &rarr;</a>
+      </div>
+
+      <div class="fact-card">
+        <h3>No zoning case has been filed — the public process hasn't started</h3>
+        <p>As of late April 2026, no rezoning or Special Use Permit application for this site has appeared on any City of Georgetown Planning and Zoning Commission or City Council agenda. The formal public hearings, <strong>where residents have legal standing to testify</strong>, have not yet begun. When that process starts, showing up matters. Until then, direct outreach to elected officials is the most effective action available.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="section-inner">
+    <span class="section-label">News Coverage</span>
+    <h2>Georgetown residents speak out</h2>
+    <p class="section-lead">KVUE Austin covered community pushback on the proposed Williamson County Justice Complex site — including concerns about school proximity and the site selection process.</p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/haIoJEQfaw4"
+        title="Georgetown residents push back on proposed Williamson County Justice Center — KVUE Austin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-credit">Source: <a href="https://www.kvue.com/article/news/local/williamson-county/georgetown-residents-push-back-proposed-williamson-county-justice-center/269-161cdd56-60b3-4ebb-bf5f-bd2884918d75" target="_blank" rel="noopener">KVUE Austin</a> — Georgetown residents push back on proposed Williamson County Justice Center</p>
+  </div>
+</section>
+
+<hr class="divider" />
+<section class="quote-section">
+  <div class="section-inner">
+    <span class="section-label">Our Position</span>
+    <h2>We support the county. We're asking for better answers.</h2>
+    <p class="body-copy">Williamson County needs a modern jail. The current downtown facility is outdated. This is not a campaign against the project itself.</p>
+    <p class="body-copy">What we're asking is why commissioners voted against even looking at a <strong>$7 million rural alternative</strong>, then unanimously paid $75.8 million for a site next to two schools. And what the county's plan is for daily inmate releases into a neighborhood with no transit, no services, and students walking by.</p>
+    <div class="quote-block">
+      <blockquote>"County convenience shouldn't take precedence over resident safety. There is plenty of open land in Williamson County that meets every criteria without being next to schools."</blockquote>
+      <cite>Georgetown resident and concerned parent</cite>
+    </div>
+  </div>
+</section>
+
+<!-- THERE'S STILL TIME -->
+<section class="urgency-section">
+  <div class="urgency-inner">
+    <span class="section-label">Why This Moment Matters</span>
+    <h2>There's still time.</h2>
+    <p class="urgency-body">The county approved a contract to purchase this property on <strong>March 24, 2026</strong>, with a 75-day feasibility period built in. That window closes around <strong>early June 2026</strong>. Until then, the county can still exit the contract. The decision is not final.</p>
+    <p class="urgency-body">No zoning case has been filed with the City of Georgetown. The formal public hearings where residents have legal standing to testify haven't happened yet. <strong>This process is still in motion.</strong></p>
+    <p class="urgency-body">That means your voice matters right now — before decisions become irreversible. Email your representatives, share this page with your neighbors, and stay informed as the zoning process begins.</p>
+    <p class="urgency-body">The window is open. Use it.</p>
+    <div class="urgency-cta-row">
+      <a href="#action" class="urgency-btn">Email Representatives &rarr;</a>
+      <a href="#email" class="urgency-btn-ghost">Copy Email Template</a>
+    </div>
+  </div>
+</section>
+
+<!-- TAKE ACTION -->
+<section class="action-section" id="action">
+  <div class="section-inner">
+    <span class="section-label">Take Action</span>
+    <h2>Email your representatives</h2>
+    <p class="section-lead">Written emails carry more weight than phone calls — they create a paper trail and go on the record. Keep it factual and specific. The commissioner and county judge both face voters in November 2026.</p>
+
+    <div class="contact-cards">
+
+      <span class="contact-group-label">Williamson County</span>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Commissioner Russ Boles</h4>
+          <span>Precinct 4 &mdash; Up for reelection Nov. 2026</span>
+        </div>
+        <a class="contact-email" href="mailto:Comm-PCT4@wilco.org?subject=Justice%20Complex%20Site%20Selection%20%E2%80%94%20Constituent%20Concerns&body=Commissioner%20Boles%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20proposed%20Justice%20Complex%20site%20at%201200%20CR%20110.%0A%0A">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>County Judge Steve Snell</h4>
+          <span>Williamson County &mdash; Faces voters for the first time Nov. 2026</span>
+        </div>
+        <a class="contact-email" href="mailto:ctyjudge@wilcotx.gov?subject=Justice%20Complex%20Site%20Selection%20%E2%80%94%20Constituent%20Concerns&body=Judge%20Snell%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20proposed%20Justice%20Complex%20site%20at%201200%20CR%20110.%0A%0A">Email</a>
+      </div>
+
+      <span class="contact-group-label">City of Georgetown</span>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Mayor's Office</h4>
+          <span>City of Georgetown</span>
+        </div>
+        <a class="contact-email" href="mailto:josh.schroeder@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20City%20Concerns&body=Mayor%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Council Member Amanda Parr — District 1</h4>
+          <span>The proposed site falls within her district</span>
+        </div>
+        <a class="contact-email" href="mailto:amanda.parr@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20District%201%20Concerns&body=Council%20Member%20Parr%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110%2C%20which%20falls%20within%20District%201.%0A%0A">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Council Member Ben Stewart — District 7</h4>
+          <span>Represents the affected school and residential corridor &mdash; former GISD Trustee and Planning &amp; Zoning Commissioner</span>
+        </div>
+        <a class="contact-email" href="mailto:ben.stewart@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20District%207%20Concerns&body=Council%20Member%20Stewart%2C%0A%0AI%20am%20a%20District%207%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110%2C%20near%20Mitchell%20Elementary%20and%20George%20Wagner%20Middle%20School.%0A%0A">Email</a>
+      </div>
+
+      <span class="contact-group-label">Georgetown ISD</span>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Dr. Devin Padavil</h4>
+          <span>GISD Superintendent</span>
+        </div>
+        <a class="contact-email" href="mailto:padavild@georgetownisd.org?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20GISD%20Campus%20Proximity&body=Dr.%20Padavil%2C%0A%0AI%20am%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110%2C%20less%20than%20half%20a%20mile%20from%20Mitchell%20Elementary%20and%20George%20Wagner%20Middle%20School.%0A%0A">Email</a>
+      </div>
+
+    </div>
+
+    <div class="action-note">
+      <strong>What to include:</strong> Your name and address so they know you're a constituent. Your specific concerns about school proximity and inmate release infrastructure. Ask for the site comparison documentation from the July 2025 and March 2026 Commissioners Court votes. Your own words carry more weight than a form letter.
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL TEMPLATE -->
+<section class="template-section" id="email">
+  <div class="section-inner">
+    <span class="section-label">Email Template</span>
+    <h2>Not sure what to say? Start here.</h2>
+    <p class="section-lead">Copy this template, add your name and address, personalize as needed, and send it to the officials above. Your own words matter — this is just a starting point.</p>
+
+    <pre class="template-box" id="email-template">Commissioner Boles and Judge Snell,
+
+My name is [YOUR NAME]. I live at [YOUR ADDRESS] in Georgetown, TX, near the proposed Justice Complex site on CR 110.
+
+I want to put several concerns on the record before the feasibility period closes.
+
+In July 2025, the Commissioners Court voted 2-2 on whether to conduct due diligence on a Florence property of approximately 481 acres priced at around $7 million — well away from residential areas and schools. That motion failed. Eight months later, commissioners unanimously approved a contract for 253 acres on CR 110 for $75,819,874. That is a $68 million difference in land cost, for less acreage, placed next to two schools and multiple residential neighborhoods. I would like to understand whether any formal written site comparison was presented to commissioners before the March vote.
+
+Beyond site selection, I want to raise a concern about inmate release. The CR 110 corridor has no fixed public transit, no walkable services, and no support infrastructure. CARTS requires advance reservations and a registered phone account. Someone walking out of a county jail with no phone and no money cannot use it. That leaves released individuals with no clear option but to move into the surrounding neighborhood.
+
+George Wagner Middle School is approximately a third of a mile from this site. Mitchell Elementary is under half a mile. Together they serve nearly 1,700 students. I understand law enforcement has a preference for site proximity to existing county infrastructure. That is a legitimate consideration. It is not, on its own, sufficient justification for placing a county jail and its daily release population next to schools in a residential corridor with no transit and no services.
+
+I am asking for three things before the feasibility period closes:
+
+1. Public release of any site comparison documentation, including the July 2025 Florence vote record and the stated rationale for the March 2026 approval.
+
+2. A formal assessment of inmate release planning for this location — specifically what transit access, support services, or infrastructure the county intends to provide.
+
+3. A commitment that if this site moves forward, detention and transport operations will be oriented away from the Rockride Lane residential and school corridor.
+
+This community is paying close attention and deserves answers before June.
+
+[YOUR NAME]
+[YOUR ADDRESS]
+Georgetown, TX</pre>
+
+    <button class="copy-btn" onclick="copyTemplate(this)">Copy Email Template</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Georgetown, TX / Justice Complex Concerns</span>
+  <p>Created by concerned Georgetown, TX residents.</p>
+  <p>
+    Sources:
+    <a href="https://www.wilcotx.gov/m/newsflash/Home/Detail/780" target="_blank" rel="noopener">Williamson County</a>
+    <span class="footer-bullet">&bull;</span>
+    <a href="https://www.wilcotx.gov/1801/Justice-Complex-Strategic-Planning" target="_blank" rel="noopener">County Jail Strategic Plan</a>
+    <span class="footer-bullet">&bull;</span>
+    <a href="https://communityimpact.com/austin/georgetown/government/2025/07/15/williamson-county-weighs-7m-florence-property-for-future-jail-complex/" target="_blank" rel="noopener">Community Impact (July 2025)</a>
+    <span class="footer-bullet">&bull;</span>
+    <a href="https://communityimpact.com/austin/georgetown/development/2026/03/26/wilco-officials-purchase-253-acres-in-georgetown-for-future-justice-complex/" target="_blank" rel="noopener">Community Impact (March 2026)</a>
+  </p>
+  <p class="footer-disclaimer">Not affiliated with any political party or campaign.</p>
+</footer>
+
+<script>
+  function copyTemplate(btn) {
+    const text = document.getElementById('email-template').innerText;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => flashCopied(btn)).catch(() => fallbackCopy(text, btn));
+    } else {
+      fallbackCopy(text, btn);
+    }
+  }
+
+  function fallbackCopy(text, btn) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); flashCopied(btn); }
+    catch(e) { alert('Please select and copy the text manually.'); }
+    document.body.removeChild(ta);
+  }
+
+  function flashCopied(btn) {
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy Email Template';
+      btn.classList.remove('copied');
+    }, 2800);
+  }
+
+  const cards = document.querySelectorAll('.fact-card');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(card => io.observe(card));
+  } else {
+    cards.forEach(card => card.classList.add('visible'));
+  }
+</script>
+
+</body>
+</html>
