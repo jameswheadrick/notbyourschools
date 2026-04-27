@@ -705,10 +705,10 @@
     Justice Complex Concerns
   </div>
   <ul class="nav-links">
-    <li><a href="#facts">The Facts</a></li>
-    <li><a href="#action">Take Action</a></li>
-    <li><a href="#email">Email Template</a></li>
-    <li><a href="#speak">Speak at Court</a></li>
+    <li><a href="#facts" data-track="nav_facts" data-track-location="nav">The Facts</a></li>
+    <li><a href="#action" data-track="nav_take_action" data-track-location="nav">Take Action</a></li>
+    <li><a href="#email" data-track="nav_email_template" data-track-location="nav">Email Template</a></li>
+    <li><a href="#speak" data-track="nav_speak_at_court" data-track-location="nav">Speak at Court</a></li>
   </ul>
 </nav>
 
@@ -718,7 +718,7 @@
     <span class="hero-tag">Georgetown, TX Residents</span>
     <h1>Williamson County couldn't agree to investigate a $7M rural alternative.<br><em>Then unanimously paid $75.8M for a site next to two schools.</em></h1>
     <p>Kitchell evaluated 35-37 sites and found 10 that met the county's criteria. Commissioners split 2-2 on entering a contract to investigate a $7 million rural option. Eight months later, they unanimously paid $75.8 million for this one — a third of a mile from Wagner Middle School and under half a mile from Mitchell Elementary, serving nearly 1,700 students.</p>
-    <a href="#action" class="hero-cta">Make Your Voice Heard &rarr;</a>
+    <a href="#action" class="hero-cta" data-track="hero_cta_main" data-track-location="hero">Make Your Voice Heard &rarr;</a>
   </div>
 </section>
 
@@ -841,8 +841,8 @@
     <p class="urgency-body">That means your voice matters right now — before decisions become irreversible. Email your representatives, share this page with your neighbors, and stay informed.</p>
     <p class="urgency-body">The window is open. Use it.</p>
     <div class="urgency-cta-row">
-      <a href="#action" class="urgency-btn">Email Representatives &rarr;</a>
-      <a href="#email" class="urgency-btn-ghost">Copy Email Template</a>
+      <a href="#action" class="urgency-btn" data-track="urgency_email_cta" data-track-location="urgency">Email Representatives &rarr;</a>
+      <a href="#email" class="urgency-btn-ghost" data-track="urgency_template_link" data-track-location="urgency">Copy Email Template</a>
     </div>
   </div>
 </section>
@@ -959,7 +959,7 @@ I am asking you to use that time to identify a site that meets the county's oper
 [YOUR ADDRESS]
 Georgetown, TX</pre>
 
-    <button class="copy-btn" onclick="copyTemplate(this)">Copy Email Template</button>
+    <button class="copy-btn" onclick="copyTemplate(this)" data-track="copy_email_template" data-track-location="email_template">Copy Email Template</button>
   </div>
 </section>
 
@@ -1045,6 +1045,18 @@ Georgetown, TX</pre>
   } else {
     cards.forEach(card => card.classList.add('visible'));
   }
+
+  // Custom event tracking — delegates clicks on any [data-track] element to gtag
+  document.addEventListener('click', function(e) {
+    const el = e.target.closest('[data-track]');
+    if (!el) return;
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'button_click', {
+      button_name: el.getAttribute('data-track'),
+      button_location: el.getAttribute('data-track-location') || 'unknown',
+      button_text: (el.textContent || '').trim().slice(0, 80)
+    });
+  });
 
   // Populate "Last updated" footer stamp from the HTML file's HTTP Last-Modified header
   (function() {
