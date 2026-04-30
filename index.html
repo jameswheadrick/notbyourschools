@@ -200,6 +200,32 @@
       box-shadow: 0 4px 20px rgba(184,50,40,0.48);
     }
 
+    .hero-cta-row {
+      display: flex;
+      gap: 0.875rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta-secondary {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.32);
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      padding: 0.875rem 1.875rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta-secondary:hover {
+      border-color: var(--white);
+      color: var(--white);
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+
     /* ─── STAT STRIP ─────────────────────────────────────── */
     .stat-strip {
       background: var(--tan);
@@ -336,6 +362,142 @@
 
     .fact-source:hover { opacity: 1; }
     .fact-source + .fact-source { margin-left: 0.75rem; }
+
+    /* ─── LOCKOUT / TIMELINE SECTION ─────────────────────── */
+    .lockout-section {
+      background: var(--tan);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline {
+      list-style: none;
+      margin: 2.25rem 0 2.5rem;
+      padding: 0;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0.7rem;
+      bottom: 0.7rem;
+      width: 2px;
+      background: var(--navy);
+      opacity: 0.18;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .timeline-item.visible { opacity: 1; transform: translateY(0); }
+
+    .timeline-item:last-child { margin-bottom: 0.5rem; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 4px var(--tan);
+    }
+
+    .timeline-date {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 4.2vw, 1.95rem);
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.01em;
+    }
+
+    .timeline-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text);
+      font-weight: 300;
+      margin-bottom: 0.65rem;
+    }
+
+    .timeline-content p:last-child { margin-bottom: 0; }
+
+    .timeline-content em {
+      color: var(--navy);
+      font-style: italic;
+    }
+
+    .timeline-content strong { color: var(--navy); font-weight: 600; }
+
+    .lockout-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2.25rem;
+    }
+
+    .lockout-block {
+      background: var(--white);
+      border-left: 3px solid var(--red);
+      border-radius: 0 4px 4px 0;
+      padding: 1.1rem 1.3rem;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .lockout-block.visible { opacity: 1; transform: translateY(0); }
+
+    .lockout-block h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .lockout-block p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 0.6rem;
+    }
+
+    .lockout-block p:last-child { margin-bottom: 0; }
+
+    .lockout-block p strong { color: var(--text); font-weight: 600; }
+
+    .lockout-cta {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.875rem 1.875rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      margin-top: 2.25rem;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 14px rgba(184,50,40,0.35);
+    }
+
+    .lockout-cta:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(184,50,40,0.45);
+    }
 
     /* ─── QUOTE ──────────────────────────────────────────── */
     .quote-section { background: var(--cream); }
@@ -708,6 +870,79 @@
     .hero-inner > *:nth-child(2) { animation-delay: 0.18s; }
     .hero-inner > *:nth-child(3) { animation-delay: 0.31s; }
     .hero-inner > *:nth-child(4) { animation-delay: 0.44s; }
+
+    /* ─── EVENT CALLOUT ──────────────────────────────────── */
+    .event-callout {
+      background: var(--tan);
+      border-top: 4px solid var(--red);
+      padding: 2.5rem 1.5rem;
+    }
+
+    .event-inner {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+
+    .event-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .event-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.5rem, 4vw, 1.9rem);
+      color: var(--navy);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .event-body {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+      font-weight: 300;
+    }
+
+    .event-body strong { color: var(--navy); font-weight: 600; }
+
+    .event-note {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-cta {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.875rem 1.875rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 14px rgba(184,50,40,0.35);
+    }
+
+    .event-cta:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(184,50,40,0.48);
+    }
   </style>
 </head>
 <body>
@@ -732,7 +967,33 @@
     <span class="hero-tag">Georgetown, TX Residents</span>
     <h1>This is a jail. Not a prison.<br><em>People are released every day &mdash; a third of a mile from two schools.</em></h1>
     <p>County jails process same-day bookings and release people around the clock, often with no money, no phone, and no transportation arranged. Williamson County unanimously paid $75.8 million for a site that puts that daily release population next to two campuses serving nearly 1,700 students &mdash; on a corridor with no transit, no walkable services, and no support infrastructure.</p>
-    <a href="#action" class="hero-cta" data-track="hero_cta_main" data-track-location="hero">Make Your Voice Heard &rarr;</a>
+    <div class="hero-cta-row">
+      <a href="#action" class="hero-cta" data-track="hero_cta_main" data-track-location="hero">Make Your Voice Heard &rarr;</a>
+      <a href="https://facebook.com/notbyourschools" target="_blank" rel="noopener" class="hero-cta-secondary" data-track="hero_facebook" data-track-location="hero">Follow on Facebook &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT CALLOUT -->
+<section class="event-callout">
+  <div class="event-inner">
+    <span class="event-tag">This Tuesday &middot; Show Up</span>
+    <h2 class="event-headline">Commissioners Court &middot; Tuesday 9:30 AM</h2>
+    <p class="event-body">If you've been following the Williamson County Jail Site debate, this is the moment. The county's option period closes around <strong>May 23</strong>. We have about three weeks to get the county to reconsider this location.</p>
+    <p class="event-body"><strong>Historic Courthouse &middot; 710 S. Main Street, Georgetown &middot; 2nd floor</strong></p>
+    <p class="event-note">You don't have to speak. Being in the room matters.</p>
+    <a href="https://www.facebook.com/events/1514551760104533/" target="_blank" rel="noopener" class="event-cta" data-track="event_fb_rsvp" data-track-location="event_callout">RSVP &amp; Event Details on Facebook &rarr;</a>
+  </div>
+</section>
+
+<!-- EVENT CALLOUT 2 -->
+<section class="event-callout">
+  <div class="event-inner">
+    <span class="event-tag">Thursday, May 21 &middot; 6&ndash;8 PM</span>
+    <h2 class="event-headline">Community Discussion on Wilco's Justice Complex</h2>
+    <p class="event-body">Hosted by <strong>Council Member Ben Stewart</strong> (Georgetown City Council, District 7) on <strong>Thursday, May 21, 2026 from 6&ndash;8 PM</strong>. A chance for residents to share concerns and hear directly from a city official representing the affected corridor.</p>
+    <p class="event-note">Location is being set based on RSVP interest. RSVP on Facebook to be notified once it's confirmed.</p>
+    <a href="https://www.facebook.com/events/35505602349054858" target="_blank" rel="noopener" class="event-cta" data-track="event_stewart_meeting" data-track-location="event_callout">RSVP &amp; Event Details on Facebook &rarr;</a>
   </div>
 </section>
 
@@ -814,38 +1075,53 @@
 <hr class="divider" />
 
 <!-- PROCESS / PUBLIC INPUT -->
-<section class="facts-section" id="process">
+<section class="lockout-section" id="process">
   <div class="section-inner">
     <span class="section-label">Process Concerns</span>
-    <h2>The site was never disclosed before the vote</h2>
-    <p class="section-lead">Williamson County did hold public information sessions in the months before committing $75.8 million to this property. None of those sessions &mdash; and none of the public-facing materials before the vote &mdash; disclosed which site the county was pursuing.</p>
+    <h2>The Public Was Locked Out</h2>
+    <p class="section-lead">By the time residents found out, the deal was effectively done.</p>
 
-    <p class="body-copy">The county held two come-and-go information sessions in January and February 2026 &mdash; open houses at the EMS Administration building with no formal presentation and no site disclosed. Residents who attended saw general information about why a new facility is needed. <strong>No one was told where it would be built.</strong></p>
+    <ol class="timeline">
+      <li class="timeline-item">
+        <div class="timeline-date">March 9, 2026</div>
+        <div class="timeline-content">
+          <p>A purchase contract for 253 acres is signed &mdash; <strong>$75.8 million</strong> for land next to two schools. The named buyer is a private individual acting as the county's paid real estate consultant. <strong>No public announcement.</strong></p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-date">March 10, 2026</div>
+        <div class="timeline-content">
+          <p>Commissioners go into <strong>closed executive session</strong>. One day after the contract was signed.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-date">March 24, 2026</div>
+        <div class="timeline-content">
+          <p>The public vote. The agenda item reads: <em>"Assignment of Commercial Contract &mdash; Unimproved Property."</em> No price. No mention of a jail. No mention of the schools nearby.</p>
+          <p>A resident at the meeting had to ask out loud what the 248 acres was even being purchased for. The county's response: <em>"We'll talk about it when we get to that item."</em></p>
+          <p><strong>The vote passed 5-0.</strong></p>
+        </div>
+      </li>
+    </ol>
 
-    <p class="body-copy">What the public didn't know is that <strong>a purchase contract for this land had already been signed on March 9 &mdash; 15 days before the public vote.</strong> A private individual acting as the county's paid real estate consultant had entered into the contract as the buyer. Commissioners were briefed on the pending purchase in a closed executive session on March 10 &mdash; one day after the contract was signed. The March 24 vote formally transferred that contract to the county.</p>
-
-    <p class="body-copy">By the time residents learned a site had been selected, the deal was already 15 days old.</p>
-
-    <p class="body-copy">On March 24, 2026, commissioners voted unanimously to approve the land purchase. Residents in the surrounding neighborhoods had no advance notice of which site had been selected before the vote.</p>
-
-    <p class="body-copy">The agenda item that authorized the vote was titled:</p>
-
-    <div class="quote-block">
-      <blockquote>"Assignment of Commercial Contract &mdash; Unimproved Property"</blockquote>
-      <cite>March 24, 2026 Commissioners Court agenda</cite>
+    <div class="lockout-blocks">
+      <div class="lockout-block">
+        <h3>What residents weren't told before the vote</h3>
+        <p>The price. The purpose. The location relative to George Wagner Middle School and Mitchell Elementary. The fact that commissioners had rejected investigating a $7 million rural alternative just eight months earlier. The affected neighborhoods &mdash; <strong>Carlson Place, Saddle Creek, Pinnacle, Churchill Farms, Summercrest, and University Park</strong> &mdash; found out only after the deal was already done.</p>
+      </div>
+      <div class="lockout-block">
+        <h3>What the agenda was supposed to do</h3>
+        <p>Texas law requires meeting agendas to be specific enough to inform the public. A $75.8 million jail purchase next to two schools is exactly the kind of decision residents deserve to know about in advance. The agenda didn't come close.</p>
+        <p>The county's own press release the next day described the project in full &mdash; the price, the address, the parcel numbers, the Justice Complex purpose. <strong>That information was available. It just wasn't in the agenda.</strong></p>
+      </div>
+      <div class="lockout-block">
+        <h3>The result</h3>
+        <p>By the time anyone in the neighborhood knew what had been decided, the contract was 15 days into a 75-day option period. The county didn't hold a public information session on the project until <strong>April 21</strong> &mdash; four weeks after the vote. The public had no real chance to weigh in before the decision was effectively made. <strong>That's not how this is supposed to work.</strong></p>
+        <p>The good news: the option period is still open. The county can still walk away from this site. But not unless residents make it impossible to ignore.</p>
+      </div>
     </div>
 
-    <p class="body-copy" style="margin-top: 1.5rem;">No price. No mention of the Justice Complex. No address beyond "Georgetown, Williamson County, Texas." No explanation of what the land would be used for. A member of the public at the meeting said he couldn't tell from the description what the 248 acres was even being acquired for.</p>
-
-    <p class="body-copy">The county's own press release &mdash; issued the following day &mdash; described the project in full detail, including the price, the address, the parcel numbers, and the Justice Complex purpose. <strong>That information was available. It was not in the agenda.</strong></p>
-
-    <p class="body-copy">No community meeting was held before the vote. No neighborhood notification has been publicly documented. No public hearing was scheduled. The surrounding neighborhoods &mdash; <strong>Carlson Place, Saddle Creek, Pinnacle, Churchill Farms, Summercrest, and University Park</strong> &mdash; found out when everyone else did.</p>
-
-    <p class="body-copy">The county did hold an information session on <strong>April 21, 2026</strong> &mdash; four weeks after the vote was taken and the contract was signed.</p>
-
-    <p class="body-copy">Georgetown City Council Member Ben Stewart, who stated publicly that he lives within a mile of the proposed site, confirmed that the project will eventually require a city zoning case &mdash; and pledged to ensure residents have a seat at the table when that process begins. As of April 27, 2026, no zoning application has been filed.</p>
-
-    <p class="body-copy"><strong>There is still time. But the window is closing.</strong></p>
+    <a href="#action" class="lockout-cta" data-track="lockout_email_cta" data-track-location="lockout">Email the Commissioners Court &rarr;</a>
   </div>
 </section>
 
@@ -913,10 +1189,18 @@
 
       <div class="contact-card">
         <div class="contact-info">
-          <h4>Commissioner Russ Boles</h4>
-          <span>Precinct 4 &mdash; Up for reelection Nov. 2026</span>
+          <h4>Commissioner Terry Cook</h4>
+          <span>Precinct 1</span>
         </div>
-        <a class="contact-email" href="mailto:Comm-PCT4@wilco.org?subject=Justice%20Complex%20Site%20Selection%20%E2%80%94%20Constituent%20Concerns&body=Commissioner%20Boles%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20proposed%20Justice%20Complex%20site%20at%201200%20CR%20110.%0A%0A" data-track="email_boles" data-track-location="contacts_wilco">Email</a>
+        <a class="contact-email" href="mailto:commissioner1@wilcotx.gov?subject=Justice%20Complex%20Site%20Selection%20%E2%80%94%20Constituent%20Concerns&body=Commissioner%20Cook%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20proposed%20Justice%20Complex%20site%20at%201200%20CR%20110.%0A%0A" data-track="email_cook" data-track-location="contacts_wilco">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Commissioner Cynthia Long</h4>
+          <span>Precinct 2</span>
+        </div>
+        <a class="contact-email" href="mailto:comm2@wilco.org?subject=Justice%20Complex%20Site%20Selection%20%E2%80%94%20Constituent%20Concerns&body=Commissioner%20Long%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20proposed%20Justice%20Complex%20site%20at%201200%20CR%20110.%0A%0A" data-track="email_long" data-track-location="contacts_wilco">Email</a>
       </div>
 
       <div class="contact-card">
@@ -929,8 +1213,16 @@
 
       <div class="contact-card">
         <div class="contact-info">
+          <h4>Commissioner Russ Boles</h4>
+          <span>Precinct 4</span>
+        </div>
+        <a class="contact-email" href="mailto:Comm-PCT4@wilco.org?subject=Justice%20Complex%20Site%20Selection%20%E2%80%94%20Constituent%20Concerns&body=Commissioner%20Boles%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20proposed%20Justice%20Complex%20site%20at%201200%20CR%20110.%0A%0A" data-track="email_boles" data-track-location="contacts_wilco">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
           <h4>County Judge Steve Snell</h4>
-          <span>Williamson County &mdash; Faces voters for the first time Nov. 2026</span>
+          <span>Williamson County</span>
         </div>
         <a class="contact-email" href="mailto:ctyjudge@wilcotx.gov?subject=Justice%20Complex%20Site%20Selection%20%E2%80%94%20Constituent%20Concerns&body=Judge%20Snell%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20proposed%20Justice%20Complex%20site%20at%201200%20CR%20110.%0A%0A" data-track="email_snell" data-track-location="contacts_wilco">Email</a>
       </div>
@@ -1089,7 +1381,7 @@ Georgetown, TX</pre>
     }, 2800);
   }
 
-  const cards = document.querySelectorAll('.fact-card');
+  const cards = document.querySelectorAll('.fact-card, .timeline-item, .lockout-block');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
