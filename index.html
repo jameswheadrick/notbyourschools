@@ -498,6 +498,48 @@
       box-shadow: 0 4px 20px rgba(184,50,40,0.45);
     }
 
+    /* ─── LEGAL NOTICE ──────────────────────────────────── */
+    .legal-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-stamp {
+      display: inline-flex;
+      align-items: center;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .legal-cta {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.875rem 1.625rem;
+      margin-top: 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 14px rgba(184,50,40,0.35);
+    }
+
+    .legal-cta:hover {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(184,50,40,0.48);
+    }
+
     /* ─── QUOTE ──────────────────────────────────────────── */
     .quote-section { background: var(--cream); }
 
@@ -1146,6 +1188,31 @@
     </div>
 
     <a href="#action" class="lockout-cta" data-track="lockout_email_cta" data-track-location="lockout">Email the Commissioners Court &rarr;</a>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- LEGAL NOTICE -->
+<section class="legal-section" id="legal">
+  <div class="section-inner">
+    <span class="legal-stamp">Legal Notice &middot; May 6, 2026</span>
+    <h2>An attorney has put the county on notice</h2>
+    <p class="section-lead">On May 6, 2026, <strong>Bill Aleshire</strong>, a prominent Texas open government attorney, sent a formal letter on behalf of Georgetown resident James Headrick to <strong>Williamson County Judge Steve Snell and County Attorney Dee Hobbs</strong>.</p>
+
+    <p class="body-copy">The letter says the March 24 vote to purchase 253 acres for a county jail violated the <strong>Texas Open Meetings Act</strong>. The agenda item didn't mention a jail. It didn't mention the price. It gave residents no reason to show up and speak.</p>
+
+    <p class="body-copy">Under Texas law, when a vote is of <strong>"special interest to the public,"</strong> the agenda notice has to say so. A $75.8 million land purchase next to two schools, paid at more than eight times its appraised value, to house a 3,000-bed jail facility, qualifies.</p>
+
+    <p class="body-copy">The letter isn't a lawsuit. It's a formal request for the county to do the right thing: <strong>put the item back on the agenda with a description that actually tells people what they're voting on, then hold a proper vote.</strong></p>
+
+    <p class="body-copy">That's not a radical ask. That's how this is supposed to work.</p>
+
+    <p class="body-copy">The county has a choice to make. If they repost the item correctly and let residents weigh in before the vote, we'll be there. If they don't, the legal options get more serious.</p>
+
+    <p class="body-copy"><strong>Watch next week's Commissioners Court agenda. If this item appears, show up.</strong></p>
+
+    <a class="legal-cta" href="Letter%20-%20Correctable%20Violation%20of%20the%20Texas%20Open%20Meetings.pdf" target="_blank" rel="noopener" data-track="legal_letter_pdf" data-track-location="legal_section">Read the letter (PDF) &rarr;</a>
   </div>
 </section>
 
