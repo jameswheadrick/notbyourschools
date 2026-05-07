@@ -540,6 +540,105 @@
       box-shadow: 0 4px 20px rgba(184,50,40,0.48);
     }
 
+    .letter-update {
+      background: var(--navy);
+      color: rgba(255,255,255,0.85);
+      border-radius: 4px;
+      padding: 1.75rem 1.6rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .letter-update-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .letter-update-heading {
+      font-family: 'DM Serif Display', serif;
+      color: var(--white);
+      font-size: clamp(1.3rem, 4vw, 1.7rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .letter-update p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+      font-weight: 300;
+    }
+
+    .letter-update p strong { color: var(--white); font-weight: 600; }
+    .letter-update p em { color: rgba(255,255,255,0.92); font-style: italic; }
+
+    .letter-update ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .letter-update ul li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .letter-update ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .letter-update ul li strong { color: var(--white); font-weight: 600; }
+    .letter-update ul li em { color: rgba(255,255,255,0.92); font-style: italic; }
+
+    .letter-update-event {
+      background: rgba(255,255,255,0.07);
+      border-left: 3px solid var(--red);
+      padding: 1rem 1.1rem;
+      margin-top: 1.25rem;
+      border-radius: 0 4px 4px 0;
+      line-height: 1.6;
+    }
+
+    .letter-update-event-date {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.005em;
+    }
+
+    .letter-update-event-where {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .letter-update-event-note {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.7rem;
+      font-weight: 300;
+    }
+
     /* ─── QUOTE ──────────────────────────────────────────── */
     .quote-section { background: var(--cream); }
 
@@ -1076,6 +1175,28 @@
 <!-- LEGAL NOTICE -->
 <section class="legal-section" id="letter">
   <div class="section-inner">
+
+    <div class="letter-update">
+      <span class="letter-update-tag">Update &middot; May 7, 2026</span>
+      <h2 class="letter-update-heading">Show up Tuesday. This is the moment.</h2>
+      <p>The county received Bill Aleshire's formal legal letter on May 6. Rather than reposting the jail land purchase for a proper vote as the letter requested, they posted this Tuesday's agenda.</p>
+      <p><strong>It doesn't include a corrected vote on the CR 110 site.</strong></p>
+      <p>It does include this:</p>
+      <ul>
+        <li><strong>Item 42:</strong> A presentation on <em>"countywide interim plans, including but not limited to those related to the Justice Complex."</em> Scheduled for 1:00 PM. This is vague by design &mdash; it gives the county cover to argue the public had a chance to weigh in without ever holding a proper vote.</li>
+        <li><strong>Item 44:</strong> Authorization of up to <strong>$135 million</strong> in Limited Tax Notes &mdash; the financing for the jail project.</li>
+        <li><strong>Item 45:</strong> Reimbursement certificates specifically for the land purchase at CR 110.</li>
+      </ul>
+      <p>Aleshire's letter warned that an OMA violation gives the Texas Attorney General grounds to block approval of public securities for this purchase. <strong>The county is moving to authorize that financing anyway.</strong></p>
+      <p>They have one more meeting after this to make it right. <strong>Tuesday may determine whether they do.</strong></p>
+      <p>We need people in those seats. Come ready to speak. Three minutes. Say your name, say you oppose the CR 110 site, and tell them why.</p>
+      <div class="letter-update-event">
+        <div class="letter-update-event-date">Tuesday, May 12, 2026</div>
+        <div class="letter-update-event-where">Williamson County Commissioners Court<br>710 S. Main Street, Georgetown<br>9:30 AM &middot; Item 42 at 1:00 PM</div>
+        <p class="letter-update-event-note">Submit a Public Participation Form when you arrive to speak on Items 42, 44, and 45.</p>
+      </div>
+    </div>
+
     <span class="legal-stamp">Letter to the County Judge &middot; May 6, 2026</span>
     <h2>The county has been asked to do this the right way</h2>
     <p class="section-lead">On May 6, 2026, <strong>Bill Aleshire</strong>, an attorney devoted to protecting the public's access to government information, sent a formal letter on behalf of Georgetown resident James Headrick to <strong>Williamson County Judge Steve Snell and County Attorney Dee Hobbs</strong>.</p>
