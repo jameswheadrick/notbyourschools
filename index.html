@@ -773,6 +773,16 @@
 
     .contact-email:hover { background: var(--navy-light); }
 
+    .contact-info-email {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--navy);
+      font-weight: 500;
+      margin-top: 0.25rem;
+      word-break: break-all;
+      user-select: all;
+    }
+
     .action-note {
       margin-top: 1.25rem;
       padding: 1rem 1.25rem;
@@ -1874,6 +1884,22 @@ Georgetown, TX</pre>
       button_location: el.getAttribute('data-track-location') || 'unknown',
       button_text: (el.textContent || '').trim().slice(0, 80)
     });
+  });
+
+  // Render each contact card's email address as visible copyable text
+  // (handles users without a default mailto: handler)
+  document.querySelectorAll('.contact-card').forEach(function(card) {
+    var link = card.querySelector('a.contact-email[href^="mailto:"]');
+    var info = card.querySelector('.contact-info');
+    if (!link || !info) return;
+    var href = link.getAttribute('href') || '';
+    var email = href.replace(/^mailto:/i, '').split('?')[0];
+    try { email = decodeURIComponent(email); } catch (e) { /* leave as-is */ }
+    if (!email) return;
+    var span = document.createElement('span');
+    span.className = 'contact-info-email';
+    span.textContent = email;
+    info.appendChild(span);
   });
 
 </script>
