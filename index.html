@@ -830,6 +830,112 @@
     .copy-btn:hover { background: var(--navy-light); transform: translateY(-1px); }
     .copy-btn.copied { background: var(--green); }
 
+    /* ─── CONTACT GROUP INTRO ──────────────────────────── */
+    .contact-group-intro {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin: 0.4rem 0 0.4rem;
+    }
+
+    .contact-group-intro strong { color: var(--text); font-weight: 600; }
+
+    /* ─── WRITE YOUR OWN EMAIL GUIDE ───────────────────── */
+    .write-guide h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-top: 1.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .write-guide p {
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: var(--text);
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+    }
+
+    .write-guide p strong { color: var(--text); font-weight: 600; }
+
+    .write-list {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0 0.5rem;
+    }
+
+    .write-list li {
+      margin-bottom: 0.55rem;
+      line-height: 1.7;
+      font-weight: 300;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .write-list li strong { color: var(--text); font-weight: 600; }
+
+    .write-points {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0.5rem;
+    }
+
+    .write-points li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.55rem;
+      line-height: 1.65;
+      font-weight: 300;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .write-points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .write-sample {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--navy);
+      border-radius: 0 4px 4px 0;
+      padding: 1.25rem 1.4rem;
+      margin-top: 1.75rem;
+    }
+
+    .write-sample-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .write-sample pre {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--text);
+      white-space: pre-wrap;
+      font-weight: 300;
+      margin: 0;
+    }
+
     /* ─── URGENCY CALLOUT ────────────────────────────────── */
     .urgency-section {
       background: var(--navy);
@@ -1461,7 +1567,7 @@
     <p class="urgency-body">The window is open. Use it.</p>
     <div class="urgency-cta-row">
       <a href="#action" class="urgency-btn" data-track="urgency_email_cta" data-track-location="urgency">Email Representatives &rarr;</a>
-      <a href="#email" class="urgency-btn-ghost" data-track="urgency_template_link" data-track-location="urgency">Copy Email Template</a>
+      <a href="#email" class="urgency-btn-ghost" data-track="urgency_email_guide" data-track-location="urgency">How to Write Your Email</a>
       <a href="https://facebook.com/notbyourschools" target="_blank" rel="noopener" class="urgency-btn-ghost" data-track="urgency_facebook" data-track-location="urgency">Follow on Facebook &rarr;</a>
     </div>
   </div>
@@ -1472,7 +1578,8 @@
   <div class="section-inner">
     <span class="section-label">Take Action</span>
     <h2>Email your representatives</h2>
-    <p class="section-lead">Written emails carry more weight than phone calls — they create a paper trail and go on the record. Keep it factual and specific. The commissioner and county judge both face voters in November 2026.</p>
+    <p class="section-lead">The county commissioners hold the decision. Please email them first. City Council members and the mayor represent the residents most affected and should also hear from you, especially as the county finalizes plans. GISD has confirmed it is engaging with commissioners on this issue.</p>
+    <p class="section-lead">Written emails go on the record and carry more weight than phone calls. Keep yours short, factual, and polite. Use your own words. The commissioner and county judge both face voters in November 2026.</p>
 
     <div class="contact-cards">
 
@@ -1528,28 +1635,71 @@
 
       <span class="contact-group-label">City of Georgetown</span>
 
+      <p class="contact-group-intro">Also reach out to your Georgetown city representatives. They do not control the county's land purchase, but they represent the residents most affected by it. The proposed site sits in District 1, less than a mile from neighborhoods across Districts 1, 6, and 7. Council members talk to county commissioners. They influence city services, transit, public safety coordination, and zoning around the site.</p>
+      <p class="contact-group-intro">Keep your email short, polite, and specific to your concerns. A few sentences in your own words carries more weight than anything copied and pasted.</p>
+
       <div class="contact-card">
         <div class="contact-info">
-          <h4>Mayor's Office</h4>
-          <span>City of Georgetown</span>
+          <h4>Mayor Josh Schroeder</h4>
+          <span>Mayor, City of Georgetown</span>
         </div>
-        <a class="contact-email" href="mailto:josh.schroeder@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20City%20Concerns&body=Mayor%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_schroeder" data-track-location="contacts_georgetown_city">Email</a>
+        <a class="contact-email" href="mailto:josh.schroeder@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Mayor%20Schroeder%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_schroeder" data-track-location="contacts_georgetown_city">Email</a>
       </div>
 
       <div class="contact-card">
         <div class="contact-info">
-          <h4>Council Member Amanda Parr — District 1</h4>
-          <span>The proposed site falls within her district</span>
+          <h4>Council Member Amanda Parr</h4>
+          <span>District 1, proposed site falls within this district</span>
         </div>
-        <a class="contact-email" href="mailto:amanda.parr@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20District%201%20Concerns&body=Council%20Member%20Parr%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110%2C%20which%20falls%20within%20District%201.%0A%0A" data-track="email_parr" data-track-location="contacts_georgetown_city">Email</a>
+        <a class="contact-email" href="mailto:amanda.parr@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Council%20Member%20Parr%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_parr" data-track-location="contacts_georgetown_city">Email</a>
       </div>
 
       <div class="contact-card">
         <div class="contact-info">
-          <h4>Council Member Ben Stewart — District 7</h4>
-          <span>Represents the affected school and residential corridor &mdash; former GISD Trustee and Planning &amp; Zoning Commissioner</span>
+          <h4>Council Member Shawn Hood</h4>
+          <span>District 2</span>
         </div>
-        <a class="contact-email" href="mailto:ben.stewart@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20District%207%20Concerns&body=Council%20Member%20Stewart%2C%0A%0AI%20am%20a%20District%207%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110%2C%20near%20Mitchell%20Elementary%20and%20George%20Wagner%20Middle%20School.%0A%0A" data-track="email_stewart" data-track-location="contacts_georgetown_city">Email</a>
+        <a class="contact-email" href="mailto:shawn.hood@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Council%20Member%20Hood%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_hood" data-track-location="contacts_georgetown_city">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Council Member Ben Butler</h4>
+          <span>District 3</span>
+        </div>
+        <a class="contact-email" href="mailto:ben.butler@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Council%20Member%20Butler%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_butler" data-track-location="contacts_georgetown_city">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Council Member Ron Garland</h4>
+          <span>District 4</span>
+        </div>
+        <a class="contact-email" href="mailto:ron.garland@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Council%20Member%20Garland%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_garland" data-track-location="contacts_georgetown_city">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Council Member Kevin Pitts</h4>
+          <span>District 5</span>
+        </div>
+        <a class="contact-email" href="mailto:kevin.pitts@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Council%20Member%20Pitts%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_pitts" data-track-location="contacts_georgetown_city">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Council Member Jake French</h4>
+          <span>District 6</span>
+        </div>
+        <a class="contact-email" href="mailto:jake.french@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Council%20Member%20French%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_french" data-track-location="contacts_georgetown_city">Email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <h4>Council Member Ben Stewart</h4>
+          <span>District 7, represents the affected school and residential corridor</span>
+        </div>
+        <a class="contact-email" href="mailto:ben.stewart@georgetowntexas.gov?subject=Williamson%20County%20Justice%20Complex%20%E2%80%94%20Constituent%20Concerns&body=Council%20Member%20Stewart%2C%0A%0AI%20am%20a%20Georgetown%20resident%20writing%20about%20the%20Williamson%20County%20Justice%20Complex%20proposed%20at%201200%20CR%20110.%0A%0A" data-track="email_stewart" data-track-location="contacts_georgetown_city">Email</a>
       </div>
 
       <span class="contact-group-label">Georgetown ISD</span>
@@ -1570,32 +1720,57 @@
   </div>
 </section>
 
-<!-- EMAIL TEMPLATE -->
-<section class="template-section" id="email">
+<!-- WRITE YOUR EMAIL GUIDE -->
+<section class="template-section write-guide" id="email">
   <div class="section-inner">
-    <span class="section-label">Email Template</span>
-    <h2>Not sure what to say? Start here.</h2>
-    <p class="section-lead">Copy this template, add your name and address, personalize as needed, and send it to the officials above. Your own words matter — this is just a starting point.</p>
+    <span class="section-label">Your Own Words</span>
+    <h2>Write your own short email. Here's what to include.</h2>
+    <p class="section-lead">Our city councilor told us form letters are usually ignored. A short, personal email in your own words carries far more weight than anything copied and pasted. It does not need to be long. A few sentences is enough.</p>
+    <p class="section-lead">Pick the points that matter most to you and write a brief email. Be polite. Be specific. Sign your name and include your address so they know you are a constituent.</p>
 
-    <pre class="template-box" id="email-template">[Name of official],
+    <h3>What to include</h3>
+    <ol class="write-list">
+      <li><strong>Your name and address.</strong> This tells them you are a real constituent in their district or city.</li>
+      <li><strong>Why you are writing.</strong> One sentence. Example: "I am writing about the proposed Williamson County Justice Complex at 1200 CR 110."</li>
+      <li><strong>The specific concern that matters most to you.</strong> Pick one or two from the points below. You do not need to list all of them.</li>
+    </ol>
 
-My name is [YOUR NAME]. I live at [YOUR ADDRESS] in Georgetown, TX. I am writing to ask that Williamson County use the remaining feasibility period to select a different site for the Justice Complex.
+    <h3>Points you can draw from</h3>
+    <ul class="write-points">
+      <li>The site sits about a third of a mile from George Wagner Middle School and Mitchell Elementary, with nearly 1,700 students between them.</li>
+      <li>A county jail releases people daily, at all hours. The CR 110 corridor has limited walkable services and no fixed transit.</li>
+      <li>Georgetown's own City Manager and Police Chief have said inmate release is already a documented issue at the current jail location. This site moves that dynamic next to schools rather than resolving it.</li>
+      <li>The county paid $75.8 million for land the appraisal district values at $9.2 million.</li>
+      <li>Kitchell, the county's project manager, identified ten qualifying sites. A 481-acre rural option near Florence was priced around $7 million eight months earlier.</li>
+      <li>The March 24 vote did not name the jail, the price, or the schools nearby on the meeting agenda. Residents had no real chance to weigh in.</li>
+      <li>The 75-day option period closes approximately May 23, 2026. There is still time to reconsider.</li>
+    </ul>
 
-The county purchased 253 acres at 1200 CR 110 for $75,819,874. George Wagner Middle School and Mitchell Elementary are both approximately a third of a mile from that site. Together they serve nearly 1,700 students. A proposed IDEA Public School campus, shown on county planning maps in the same corridor, is also about a third of a mile away. This is the wrong location for a county jail.
+    <h3>Close with a polite ask</h3>
+    <p>End with a clear, courteous ask. A few examples:</p>
+    <ul class="write-points">
+      <li>"Please use the remaining option period to advocate for a different site."</li>
+      <li>"Please ask the county to repost this item with a corrected agenda and hold a proper vote."</li>
+      <li>"Please share my concerns with your colleagues and the county commissioners."</li>
+    </ul>
+    <p>Thank them for their time and service.</p>
 
-In July 2025, commissioners split 2-2 on whether to enter a contract to begin due diligence on a Florence property of approximately 481 acres priced at around $7 million, away from residential areas — one of 10 sites Kitchell identified as meeting the county's criteria. That motion failed. Eight months later, the county approved the CR 110 purchase. That decision deserves to be reconsidered before the option period closes.
+    <div class="write-sample">
+      <span class="write-sample-tag">Sample</span>
+      <pre>Council Member [Name],
 
-A county jail has a daily release population. The CR 110 corridor has limited walkable services and no fixed transit for people leaving the facility. City of Georgetown officials have confirmed inmate release is already a documented issue at the current location, despite the county's stated resources for released inmates. Moving the facility here does not solve it.
+My name is [Your Name]. I live at [Your Address] in Georgetown.
 
-The feasibility period closes approximately May 23, 2026. There is still time to make a different decision.
+I am writing about the proposed Williamson County Justice Complex at 1200 CR 110. My concern is the site's proximity to Wagner Middle School and Mitchell Elementary, and the daily inmate release dynamic the city has already acknowledged at the current location. The CR 110 corridor is not equipped for it.
 
-I am asking you to use that time to identify a site that meets the county's operational needs without placing a jail next to schools and neighborhoods with limited infrastructure to support it. Williamson County has no shortage of land. This site is not the only option — and the public record shows others were already on the table.
+The county had ten qualifying sites identified by Kitchell. There is still time in the option period to choose a different one. Please share these concerns with the commissioners and advocate for a different site.
 
-[YOUR NAME]
-[YOUR ADDRESS]
+Thank you for your time.
+
+[Your Name]
+[Your Address]
 Georgetown, TX</pre>
-
-    <button class="copy-btn" onclick="copyTemplate(this)" data-track="copy_email_template" data-track-location="email_template">Copy Email Template</button>
+    </div>
   </div>
 </section>
 
