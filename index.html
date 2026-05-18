@@ -48,6 +48,7 @@
       --border:     #d4cfc4;
       --white:      #ffffff;
       --green:      #1e7e4a;
+      --amber:      #b87a1a;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -527,19 +528,81 @@
       border-bottom: 1px solid var(--border);
     }
 
+    /* Stats bar */
+    .process-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.1rem 1rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .process-stat-num {
+      display: block;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1.1;
+    }
+
+    .process-stat-lbl {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.25rem;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 600px) {
+      .process-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Legend */
+    .process-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.4rem;
+      margin: 0 0 1.75rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .process-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .process-dot {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      border: 2px solid var(--tan);
+      box-shadow: 0 0 0 1px var(--border);
+    }
+    .process-dot.engaged  { background: var(--green); }
+    .process-dot.decision { background: var(--amber); }
+    .process-dot.locked   { background: var(--red); }
+
+    /* Timeline rail */
     .timeline {
       list-style: none;
-      margin: 2.25rem 0 2.5rem;
-      padding: 0;
+      margin: 0 0 2.5rem;
+      padding: 0 0 0 2.25rem;
       position: relative;
     }
 
     .timeline::before {
       content: '';
       position: absolute;
-      left: 6px;
-      top: 0.7rem;
-      bottom: 0.7rem;
+      left: 7px;
+      top: 0.5rem;
+      bottom: 0.5rem;
       width: 2px;
       background: var(--navy);
       opacity: 0.18;
@@ -547,8 +610,7 @@
 
     .timeline-item {
       position: relative;
-      padding-left: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       opacity: 0;
       transform: translateY(14px);
       transition: opacity 0.45s ease, transform 0.45s ease;
@@ -561,40 +623,180 @@
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0.55rem;
-      width: 14px;
-      height: 14px;
+      left: -1.85rem;
+      top: 1rem;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      background: var(--red);
-      box-shadow: 0 0 0 4px var(--tan);
+      background: var(--white);
+      border: 3px solid var(--red);
+      box-shadow: 0 0 0 3px var(--tan);
+      z-index: 1;
+    }
+
+    .timeline-item[data-kind="engaged"]::before  { border-color: var(--green); }
+    .timeline-item[data-kind="decision"]::before { border-color: var(--amber); }
+
+    .timeline-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      border-radius: 0 4px 4px 0;
+      padding: 1.1rem 1.3rem 1rem;
+    }
+    .timeline-item[data-kind="engaged"]  .timeline-card { border-left-color: var(--green); }
+    .timeline-item[data-kind="decision"] .timeline-card { border-left-color: var(--amber); }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.85rem;
+      margin-bottom: 0.4rem;
     }
 
     .timeline-date {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.5rem, 4.2vw, 1.95rem);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--navy);
-      line-height: 1.1;
-      margin-bottom: 0.55rem;
-      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .timeline-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.18rem 0.5rem;
+      border-radius: 2px;
+      background: rgba(184,50,40,0.10);
+      color: var(--red);
+    }
+    .timeline-item[data-kind="engaged"]  .timeline-tag {
+      background: rgba(30,126,74,0.10);
+      color: var(--green);
+    }
+    .timeline-item[data-kind="decision"] .timeline-tag {
+      background: rgba(184,122,26,0.12);
+      color: var(--amber);
+    }
+
+    .timeline-headline {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.25;
+      color: var(--navy);
+      margin: 0.25rem 0 0.5rem;
+      letter-spacing: -0.005em;
     }
 
     .timeline-content p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.7;
       color: var(--text);
       font-weight: 300;
-      margin-bottom: 0.65rem;
+      margin: 0 0 0.65rem;
     }
 
     .timeline-content p:last-child { margin-bottom: 0; }
 
-    .timeline-content em {
-      color: var(--navy);
-      font-style: italic;
-    }
+    .timeline-content em { color: var(--navy); font-style: italic; }
 
     .timeline-content strong { color: var(--navy); font-weight: 600; }
+
+    .timeline-lenses {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .timeline-lenses { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+
+    .lens-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-source {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.65rem;
+      font-style: italic;
+    }
+    .timeline-source a {
+      color: var(--red);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+    .timeline-source a:hover { opacity: 0.75; }
+
+    /* Gap marker */
+    .timeline-gap {
+      position: relative;
+      margin: 0 0 1.5rem;
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-muted);
+      list-style: none;
+    }
+
+    .timeline-gap::before {
+      content: '';
+      position: absolute;
+      left: -1.7rem;
+      top: 0.75rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      box-shadow: 0 0 0 3px var(--tan);
+    }
+
+    /* Closing block */
+    .process-close {
+      margin-top: 2rem;
+      padding: 1.5rem 1.5rem 1.3rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--red);
+      border-radius: 0 0 4px 4px;
+    }
+
+    .process-close h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      line-height: 1.3;
+      color: var(--navy);
+      margin: 0 0 0.6rem;
+    }
+
+    .process-close p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin: 0 0 0.6rem;
+    }
+    .process-close p:last-child { margin-bottom: 0; }
+    .process-close strong { color: var(--text); font-weight: 600; }
+    .process-close em { color: var(--navy); font-style: italic; }
 
     .lockout-blocks {
       display: flex;
@@ -656,48 +858,6 @@
       box-shadow: 0 4px 20px rgba(184,50,40,0.45);
     }
 
-    /* ─── LEGAL NOTICE ──────────────────────────────────── */
-    .legal-section {
-      background: var(--white);
-      border-top: 4px solid var(--red);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .legal-stamp {
-      display: inline-flex;
-      align-items: center;
-      background: var(--red);
-      color: var(--white);
-      font-size: 0.69rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 2px;
-      margin-bottom: 1rem;
-    }
-
-    .legal-cta {
-      display: inline-block;
-      background: var(--red);
-      color: var(--white);
-      text-decoration: none;
-      padding: 0.875rem 1.625rem;
-      margin-top: 1.5rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border-radius: 3px;
-      letter-spacing: 0.02em;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 2px 14px rgba(184,50,40,0.35);
-    }
-
-    .legal-cta:hover {
-      background: var(--red-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(184,50,40,0.48);
-    }
-
     .letter-update {
       background: var(--navy);
       color: rgba(255,255,255,0.85);
@@ -738,6 +898,13 @@
 
     .letter-update p strong { color: var(--white); font-weight: 600; }
     .letter-update p em { color: rgba(255,255,255,0.92); font-style: italic; }
+    .letter-update a {
+      color: var(--white);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.45);
+      transition: border-color 0.2s;
+    }
+    .letter-update a:hover { border-bottom-color: var(--white); }
 
     .letter-update ul {
       list-style: none;
@@ -1502,6 +1669,35 @@
   </div>
 </div>
 
+<!-- UPCOMING EVENTS -->
+<section class="event-callout" id="events">
+  <div class="event-inner">
+    <span class="event-tag">Get Involved</span>
+    <h2 class="event-headline">Show up.</h2>
+    <p class="event-lead">The county's option period closes around <strong>May 23</strong>. There's still time to get them to reconsider this location.</p>
+
+    <div class="event-list">
+
+      <div class="event-item">
+        <div class="event-item-date">Tuesday, May 19 &middot; 9:30 AM</div>
+        <h3 class="event-item-title">Williamson County Commissioners Court</h3>
+        <p class="event-body"><strong>Tomorrow.</strong> The financing for the CR&nbsp;110 site returns to the agenda &mdash; including Item&nbsp;44 (ratification of the March&nbsp;24 land vote) and Item&nbsp;45 (~$20M in FY26 jail/justice spending recharacterized as limited tax notes). This is the next public moment to be in the room.</p>
+        <p class="event-note">Williamson County Courthouse, 710 S. Main Street, Georgetown. Submit a Public Participation Form when you arrive if you want to speak.</p>
+        <a href="https://www.facebook.com/events/1646667043050109" target="_blank" rel="noopener" class="event-cta" data-track="event_may19_court" data-track-location="event_callout">RSVP &amp; Event Details on Facebook &rarr;</a>
+      </div>
+
+      <div class="event-item">
+        <div class="event-item-date">Thursday, May 21 &middot; 6&ndash;8 PM</div>
+        <h3 class="event-item-title">Community Discussion on Wilco's Justice Complex</h3>
+        <p class="event-body">Hosted by <strong>Council Member Ben Stewart</strong> (Georgetown City Council, District 7). A chance for residents to share concerns and hear directly from a city official representing the affected corridor.</p>
+        <p class="event-note">Location is being set based on RSVP interest. RSVP on Facebook to be notified once it's confirmed.</p>
+        <a href="https://www.facebook.com/events/35505602349054858" target="_blank" rel="noopener" class="event-cta" data-track="event_stewart_meeting" data-track-location="event_callout">RSVP &amp; Event Details on Facebook &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- NEWSLETTER SIGNUP -->
 <section class="newsletter-section" id="updates">
   <div class="newsletter-inner">
@@ -1547,7 +1743,7 @@
           <cite>Stephanie Tibbets &mdash; Saddle Creek, retired pediatric SANE nurse</cite>
         </li>
       </ul>
-      <p>The financing vote was pulled from today's agenda. It will be back <strong>next Tuesday, May 19</strong>. There will also be a separate agenda item responding to the formal Open Meetings Act complaint filed by attorney Bill Aleshire. Watch for the posted agenda later this week.</p>
+      <p>The financing vote was pulled from today's agenda and returns <strong>next Tuesday, May 19</strong>. The May&nbsp;19 agenda now also includes <strong>Item&nbsp;44</strong> &mdash; an explicit ratification of the March&nbsp;24 land vote &mdash; posted in response to the formal Open Meetings Act letter filed by attorney <strong>Bill Aleshire</strong> on behalf of Georgetown resident James&nbsp;Headrick. The county's response is to redo the vote with proper notice, not to rescind it. <a href="Letter%20-%20Correctable%20Violation%20of%20the%20Texas%20Open%20Meetings.pdf" target="_blank" rel="noopener" data-track="letter_pdf_inline" data-track-location="post_meeting_update">Read the Aleshire letter (PDF) &rarr;</a></p>
       <p>The 1PM session was equally important. Most of the public had gone home. County Manager Rebecca Clemons presented four options for the Justice Complex, including staying and expanding downtown. Two commissioners said this publicly on the record:</p>
       <ul class="letter-update-quotes">
         <li>
@@ -1565,53 +1761,6 @@
         <div class="letter-update-event-where">Williamson County Commissioners Court<br>710 S. Main Street, Georgetown<br>9:30 AM</div>
         <p class="letter-update-event-note">Submit a Public Participation Form when you arrive.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- LEGAL NOTICE -->
-<section class="legal-section" id="letter">
-  <div class="section-inner">
-
-    <span class="legal-stamp">Letter to the County Judge &middot; May 6, 2026</span>
-    <h2>The county has been asked to do this the right way</h2>
-    <p class="section-lead">On May 6, 2026, <strong>Bill Aleshire</strong>, an attorney devoted to protecting the public's access to government information, sent a formal letter on behalf of Georgetown resident James Headrick to <strong>Williamson County Judge Steve Snell and County Attorney Dee Hobbs</strong>.</p>
-
-    <p class="body-copy">The letter says the March 24 vote to purchase 253 acres for a county jail violated the <strong>Texas Open Meetings Act</strong>. The agenda item didn't mention a jail. It didn't mention the price. It gave residents no reason to show up and speak.</p>
-
-    <p class="body-copy">Under Texas law, when a vote is of <strong>"special interest to the public,"</strong> the agenda notice has to say so. <strong>This isn't a new legal theory.</strong> The Texas Supreme Court established this standard decades ago in <em>Cox Enterprises v. Austin ISD</em> and has been clear that public bodies must fully disclose what they're voting on. A $75.8 million land purchase next to two schools, paid at more than eight times its appraised value, to house a 3,000-bed jail facility, qualifies.</p>
-
-    <p class="body-copy">The letter isn't a lawsuit. It's a formal request for the county to do the right thing: <strong>put the item back on the agenda with a description that actually tells people what they're voting on, then hold a proper vote.</strong></p>
-
-    <p class="body-copy">That's not a radical ask. That's how this is supposed to work.</p>
-
-    <p class="body-copy">Aleshire also notes that the OMA violation gives the <strong>Texas Attorney General grounds to refuse approval of any public securities</strong> the county issues to finance the purchase. <strong>The county can't build a jail without financing it.</strong></p>
-
-    <p class="body-copy">The county has a choice to make.</p>
-
-    <p class="body-copy"><strong>Watch next week's Commissioners Court agenda. If this item appears, show up. View the letter below and keep the pressure on.</strong></p>
-
-    <a class="legal-cta" href="Letter%20-%20Correctable%20Violation%20of%20the%20Texas%20Open%20Meetings.pdf" target="_blank" rel="noopener" data-track="legal_letter_pdf" data-track-location="legal_section">Read the letter (PDF) &rarr;</a>
-  </div>
-</section>
-
-<!-- UPCOMING EVENTS -->
-<section class="event-callout" id="events">
-  <div class="event-inner">
-    <span class="event-tag">Get Involved</span>
-    <h2 class="event-headline">Show up.</h2>
-    <p class="event-lead">The county's option period closes around <strong>May 23</strong>. There's still time to get them to reconsider this location.</p>
-
-    <div class="event-list">
-
-      <div class="event-item">
-        <div class="event-item-date">Thursday, May 21 &middot; 6&ndash;8 PM</div>
-        <h3 class="event-item-title">Community Discussion on Wilco's Justice Complex</h3>
-        <p class="event-body">Hosted by <strong>Council Member Ben Stewart</strong> (Georgetown City Council, District 7). A chance for residents to share concerns and hear directly from a city official representing the affected corridor.</p>
-        <p class="event-note">Location is being set based on RSVP interest. RSVP on Facebook to be notified once it's confirmed.</p>
-        <a href="https://www.facebook.com/events/35505602349054858" target="_blank" rel="noopener" class="event-cta" data-track="event_stewart_meeting" data-track-location="event_callout">RSVP &amp; Event Details on Facebook &rarr;</a>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1694,47 +1843,305 @@
 <section class="lockout-section" id="process">
   <div class="section-inner">
     <span class="section-label">Process Concerns</span>
-    <h2>The Public Was Locked Out</h2>
-    <p class="section-lead">By the time residents found out, the deal was effectively done.</p>
+    <h2>How the County Reached a $75.8M Vote Without the Public in the Room</h2>
+    <p class="section-lead">A chronology of every public touchpoint &mdash; and every closed-door step &mdash; leading up to the May&nbsp;19, 2026 financing vote on a 255-acre jail site a third of a mile from two schools in Georgetown's District&nbsp;7.</p>
+
+    <div class="process-stats" role="list">
+      <div role="listitem">
+        <span class="process-stat-num">1</span>
+        <span class="process-stat-lbl">Pre-vote public info session</span>
+      </div>
+      <div role="listitem">
+        <span class="process-stat-num">28</span>
+        <span class="process-stat-lbl">Days from "rescheduled" to land vote</span>
+      </div>
+      <div role="listitem">
+        <span class="process-stat-num">15</span>
+        <span class="process-stat-lbl">Days into option period before public learned</span>
+      </div>
+      <div role="listitem">
+        <span class="process-stat-num">$75.8M</span>
+        <span class="process-stat-lbl">Approved on a cloaked agenda line</span>
+      </div>
+    </div>
+
+    <div class="process-legend" aria-label="Legend">
+      <span><span class="process-dot engaged"></span> Public engagement happened</span>
+      <span><span class="process-dot decision"></span> Decision point</span>
+      <span><span class="process-dot locked"></span> Public locked out</span>
+    </div>
 
     <ol class="timeline">
-      <li class="timeline-item">
-        <div class="timeline-date">March 9, 2026</div>
-        <div class="timeline-content">
-          <p>A purchase contract for 253 acres is signed &mdash; <strong>$75.8 million</strong> for land next to two schools. The named buyer is a private individual acting as the county's paid real estate consultant. <strong>No public announcement.</strong></p>
+
+      <li class="timeline-item" data-kind="engaged">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">2024 &ndash; 2025</span>
+            <span class="timeline-tag">Phase 1 begins</span>
+          </div>
+          <h3 class="timeline-headline">Kitchell launches the site search &mdash; behind the scenes</h3>
+          <div class="timeline-content">
+            <p>The county's project manager <strong>evaluates 35&ndash;37 candidate sites</strong> and narrows to a short list of approximately 10 that "meet the criteria." The list, the scoring methodology, and the criteria themselves are <strong>not released to the public</strong>.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                No way to see which sites were considered, ranked, or rejected &mdash; or on what grounds.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                City Council and GISD trustees, whose constituents bear the impact, are not briefed on candidate parcels inside Georgetown.
+              </div>
+            </div>
+          </div>
         </div>
       </li>
-      <li class="timeline-item">
-        <div class="timeline-date">March 10, 2026</div>
-        <div class="timeline-content">
-          <p>Commissioners go into <strong>closed executive session</strong>. One day after the contract was signed.</p>
+
+      <li class="timeline-item" data-kind="decision">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">July 15, 2025</span>
+            <span class="timeline-tag">Cheaper option dies 2&ndash;2</span>
+          </div>
+          <h3 class="timeline-headline">The $7M / 481-acre Florence site fails on a tie vote</h3>
+          <div class="timeline-content">
+            <p>Commissioners deadlock <strong>2&ndash;2</strong> on entering due diligence for a rural 481-acre tract near Highway 195 priced around <strong>$7&nbsp;million</strong> &mdash; one of the qualifying sites. The motion dies. No replacement direction is given publicly.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                Eight months before CR&nbsp;110, the county walked away from a site that was rural, cheaper, and far from any school &mdash; without a recorded rationale.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                A 2&ndash;2 deadlock on a $7M tract leaves the search direction unsettled &mdash; yet there is no public re-scoping or community input session afterward.
+              </div>
+            </div>
+            <p class="timeline-source">Source: <a href="https://communityimpact.com/austin/georgetown/government/2025/07/15/williamson-county-weighs-7m-florence-property-for-future-jail-complex/" target="_blank" rel="noopener">Community Impact, July 15, 2025</a></p>
+          </div>
         </div>
       </li>
-      <li class="timeline-item">
-        <div class="timeline-date">March 24, 2026</div>
-        <div class="timeline-content">
-          <p>The public vote. The agenda item reads: <em>"Assignment of Commercial Contract &mdash; Unimproved Property."</em> No price. No mention of a jail. No mention of the schools nearby.</p>
-          <p>A resident at the meeting had to ask out loud what the 248 acres was even being purchased for. The county's response: <em>"We'll talk about it when we get to that item."</em></p>
-          <p><strong>The vote passed 5-0.</strong></p>
+
+      <li class="timeline-gap">Six months of silence. No public information sessions. No published short list.</li>
+
+      <li class="timeline-item" data-kind="engaged">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">January 15, 2026</span>
+            <span class="timeline-tag">Only pre-vote info session</span>
+          </div>
+          <h3 class="timeline-headline">The single public information session before any vote</h3>
+          <div class="timeline-content">
+            <p>The county holds <strong>one</strong> public information session. No specific site is named. The CR&nbsp;110 parcels are not disclosed. It is the <em>only</em> in-person engagement opportunity residents will get before a 5&ndash;0 land-purchase vote.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                The one chance to ask questions in person came before there was anything specific to ask about.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                A single advance briefing is not a public-engagement program for a $75M, generational siting decision.
+              </div>
+            </div>
+          </div>
         </div>
       </li>
+
+      <li class="timeline-item" data-kind="locked">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">March 3, 2026</span>
+            <span class="timeline-tag">Rescheduled &mdash; never rescheduled</span>
+          </div>
+          <h3 class="timeline-headline">Second public session rescheduled. No new date is set.</h3>
+          <div class="timeline-content">
+            <p>A second public information session is <strong>quietly postponed</strong> via a county CivicAlert. No replacement date is announced. The next session the public learns about is not posted until <em>after</em> the land vote.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                The engagement track was effectively shut down weeks before the decision &mdash; without explanation.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                An open-ended postponement immediately before a major procurement is the kind of signal a council member should be told about. Georgetown leadership was not informed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="locked">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">March 9, 2026</span>
+            <span class="timeline-tag">$75.8M contract signed in private</span>
+          </div>
+          <h3 class="timeline-headline">Purchase contract executed &mdash; with no public announcement</h3>
+          <div class="timeline-content">
+            <p>A purchase contract for the four CR&nbsp;110 parcels (~255 acres) is signed at <strong>$75,819,874</strong>. The named buyer on the contract is the county's <strong>paid real estate consultant, Scott Stribling</strong>, who will later assign the contract to the county. No press release. No agenda. No notice to neighbors.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                The financial decision was effectively made before anyone in the surrounding neighborhoods even knew the parcels were in play.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                The contract structure &mdash; consultant signs, county later assigns &mdash; obscures the buyer of record at the moment of decision.
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="locked">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">March 10, 2026</span>
+            <span class="timeline-tag">Executive session</span>
+          </div>
+          <h3 class="timeline-headline">Commissioners go behind closed doors &mdash; one day after the contract</h3>
+          <div class="timeline-content">
+            <p>A closed executive session is convened the day after the contract is signed. The public is not told what is being discussed. There is no public deliberation on the record before the vote that follows.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="locked">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">March 24, 2026</span>
+            <span class="timeline-tag">The cloaked vote</span>
+          </div>
+          <h3 class="timeline-headline">$75.8M passes 5&ndash;0 on an agenda line that names nothing</h3>
+          <div class="timeline-content">
+            <p>The agenda item reads only: <em>"Assignment of Commercial Contract &mdash; Unimproved Property."</em> <strong>No price. No jail. No mention of the schools.</strong> A resident in the room has to ask out loud what is being purchased. The response: "We'll talk about it when we get to that item." The vote passes <strong>5&ndash;0</strong>.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                No reason to attend. No way to comment. No mention of a jail next to a middle school on the public notice.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                The Texas Open Meetings Act requires agenda notices specific enough to inform the public on matters of special interest. A $75.8M jail siting is exactly that.
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="locked">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">March 25, 2026</span>
+            <span class="timeline-tag">Press release &mdash; after the fact</span>
+          </div>
+          <h3 class="timeline-headline">The county finally describes what it bought &mdash; one day after the vote</h3>
+          <div class="timeline-content">
+            <p>A county press release the next morning details the <strong>price, address, parcel numbers, and Justice Complex purpose</strong>. All of that information existed the day before. None of it appeared on the agenda the public was supposed to read.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="locked">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">March 25, 2026</span>
+            <span class="timeline-tag">Engagement, now announced</span>
+          </div>
+          <h3 class="timeline-headline">A "public information session" is posted &mdash; for four weeks later</h3>
+          <div class="timeline-content">
+            <p>The next CivicAlert sets a public information session for <strong>April 21, 2026</strong> &mdash; the <em>day after</em> the cloaked land vote. The first meaningful chance for residents to weigh in is now scheduled for nearly a month <em>after</em> the contract was approved.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                "Public engagement" arrives in the calendar only after the binding decision is already made.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                The sequencing of communication after the vote &mdash; rather than before &mdash; is what County Judge Snell later described in terms of avoiding "sticker shock."
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="decision">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">April 21, 2026</span>
+            <span class="timeline-tag">First real public session</span>
+          </div>
+          <h3 class="timeline-headline">Residents finally get to ask questions &mdash; 28 days late</h3>
+          <div class="timeline-content">
+            <p>The public information session is held <strong>28 days after</strong> the land was bought. By this point the option period is already a third gone. Affected neighborhoods &mdash; Carlson Place, Saddle Creek, Pinnacle, Churchill Farms, Summercrest, University Park &mdash; learn the scale of the project for the first time.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="decision">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">May 6, 2026</span>
+            <span class="timeline-tag">TOMA letter filed</span>
+          </div>
+          <h3 class="timeline-headline">Attorney Bill Aleshire formally calls out the cloaked vote</h3>
+          <div class="timeline-content">
+            <p>A formal letter to County Judge Snell and County Attorney Hobbs asserts the March&nbsp;24 vote violated the <strong>Texas Open Meetings Act</strong> and warns that the defect gives the Attorney General grounds to refuse approval of any public securities issued to finance the purchase. <em>The county can't build a jail without financing it.</em></p>
+            <p class="timeline-source">Source: <a href="https://notbyourschools.com/Letter%20-%20Correctable%20Violation%20of%20the%20Texas%20Open%20Meetings.pdf" target="_blank" rel="noopener">Aleshire letter (PDF)</a></p>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="decision">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">May 12, 2026</span>
+            <span class="timeline-tag">The public shows up</span>
+          </div>
+          <h3 class="timeline-headline">Standing-room neighbors. 11 against, 1 in favor. Financing pulled.</h3>
+          <div class="timeline-content">
+            <p>More than <strong>30 neighbors</strong> pack Commissioners Court. <strong>Eleven speak against the site on the record; one speaks in favor.</strong> The financing vote is pulled from the agenda. Commissioner Boles and Judge Snell both say publicly the conversation with neighborhoods is not finished.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                The first time the public participated at full strength, the county moved.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                The pull signals the agenda framing was insufficient on its own &mdash; engagement only happened once neighbors organized themselves.
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li class="timeline-item" data-kind="locked">
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-date">May 19, 2026</span>
+            <span class="timeline-tag">The vote &mdash; with new framing</span>
+          </div>
+          <h3 class="timeline-headline">Financing returns. The cloaked-agenda pattern returns with it.</h3>
+          <div class="timeline-content">
+            <p><strong>Item 44</strong> attempts to <em>ratify</em> the March&nbsp;24 land vote and cure the Open Meetings Act defect. <strong>Item 45</strong> repeats the same pattern: roughly <strong>$20M in FY26 jail/justice spending</strong> is presented under a generic CIP label, and the financing tool is recharacterized from <strong>$135M certificates of obligation to $150M limited tax notes</strong> &mdash; a Chapter 1431 instrument that bypasses the public-notice and petition rights of Chapter 1271.</p>
+            <div class="timeline-lenses">
+              <div>
+                <span class="lens-label">Residents</span>
+                A vote that should have answered the public-process question is, by its own structure, raising the same question again.
+              </div>
+              <div>
+                <span class="lens-label">Elected Officials</span>
+                The switch from certificates of obligation to limited tax notes is not cosmetic &mdash; it changes which statutory rights the public has to object. That choice deserves to be named on the agenda.
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
     </ol>
 
-    <div class="lockout-blocks">
-      <div class="lockout-block">
-        <h3>What residents weren't told before the vote</h3>
-        <p>The price. The purpose. The location relative to George Wagner Middle School and Mitchell Elementary. The 1,700 students on those two campuses, a third of a mile from the property line. The affected neighborhoods &mdash; <strong>Carlson Place, Saddle Creek, Pinnacle, Churchill Farms, Summercrest, and University Park</strong> &mdash; found out only after the deal was already done.</p>
-      </div>
-      <div class="lockout-block">
-        <h3>What the agenda was supposed to do</h3>
-        <p>Texas law requires meeting agendas to be specific enough to inform the public. A $75.8 million jail purchase next to two schools is exactly the kind of decision residents deserve to know about in advance. The agenda didn't come close.</p>
-        <p>The county's own press release the next day described the project in full &mdash; the price, the address, the parcel numbers, the Justice Complex purpose. <strong>That information was available. It just wasn't in the agenda.</strong></p>
-      </div>
-      <div class="lockout-block">
-        <h3>The result</h3>
-        <p>By the time anyone in the neighborhood knew what had been decided, the contract was 15 days into a 75-day option period. The county didn't hold a public information session on the project until <strong>April 21</strong> &mdash; four weeks after the vote. The public had no real chance to weigh in before the decision was effectively made. <strong>That's not how this is supposed to work.</strong></p>
-        <p>The good news: the option period is still open. The county can still walk away from this site. But not unless residents make it impossible to ignore.</p>
-      </div>
+    <div class="process-close">
+      <h3>One info session. One cloaked vote. One ratification. That is the engagement record.</h3>
+      <p>From the start of Kitchell's site search to the May&nbsp;19 financing vote, residents of Georgetown's District&nbsp;7 had exactly <strong>one</strong> in-person opportunity to ask questions about the Justice Complex <em>before</em> the county committed $75.8&nbsp;million to a 255-acre site a third of a mile from two schools.</p>
+      <p>Every binding step happened on an agenda that did not name the project. Every meaningful chance to comment came after the decision was already made. <strong>That is not how a generational public-safety decision is supposed to be made.</strong></p>
     </div>
 
     <a href="#action" class="lockout-cta" data-track="lockout_email_cta" data-track-location="lockout">Email the Commissioners Court &rarr;</a>
