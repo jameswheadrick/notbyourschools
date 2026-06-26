@@ -1163,42 +1163,6 @@
       border-top: 1px solid var(--border);
     }
 
-    .template-box {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1.5rem;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.82rem;
-      line-height: 1.82;
-      color: var(--text);
-      white-space: pre-wrap;
-      word-break: break-word;
-      margin-top: 1.25rem;
-      overflow-x: auto;
-    }
-
-    .copy-btn {
-      margin-top: 0.875rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      padding: 0.6rem 1.35rem;
-      border-radius: 3px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      font-family: 'DM Sans', sans-serif;
-      letter-spacing: 0.01em;
-    }
-
-    .copy-btn:hover { background: var(--navy-light); transform: translateY(-1px); }
-    .copy-btn.copied { background: var(--green); }
-
     /* ─── CONTACT GROUP INTRO ──────────────────────────── */
     .contact-group-intro {
       font-size: 0.92rem;
@@ -2356,7 +2320,7 @@
     <span class="footer-bullet">&bull;</span>
     <a href="https://search.wcad.org" target="_blank" rel="noopener">WCAD</a>
   </p>
-  <p class="footer-disclaimer">Last updated: May 19, 2026</p>
+  <p class="footer-disclaimer">Last updated: <span id="last-updated">&mdash;</span></p>
 
   <div class="footer-disclosure">
     <p>The information on this site is compiled from publicly available documents, official government records, news coverage, and direct statements from elected officials. We make every effort to ensure accuracy and update content as new information becomes available. If you believe something is incorrect, contact us at <a href="mailto:hello@notbyourschools.com">hello@notbyourschools.com</a>.</p>
@@ -2365,36 +2329,6 @@
 </footer>
 
 <script>
-  function copyTemplate(btn) {
-    const text = document.getElementById('email-template').innerText;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(() => flashCopied(btn)).catch(() => fallbackCopy(text, btn));
-    } else {
-      fallbackCopy(text, btn);
-    }
-  }
-
-  function fallbackCopy(text, btn) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
-    document.body.appendChild(ta);
-    ta.focus();
-    ta.select();
-    try { document.execCommand('copy'); flashCopied(btn); }
-    catch(e) { alert('Please select and copy the text manually.'); }
-    document.body.removeChild(ta);
-  }
-
-  function flashCopied(btn) {
-    btn.textContent = '✓ Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => {
-      btn.textContent = 'Copy Email Template';
-      btn.classList.remove('copied');
-    }, 2800);
-  }
-
   const cards = document.querySelectorAll('.fact-card, .timeline-item, .lockout-block');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -2438,6 +2372,18 @@
     info.appendChild(span);
   });
 
+  // Populate "Last updated" footer stamp from the HTML file's HTTP Last-Modified header
+  (function() {
+    var el = document.getElementById('last-updated');
+    if (!el) return;
+    var ts = document.lastModified;
+    if (!ts) return;
+    var d = new Date(ts);
+    if (isNaN(d.getTime())) { el.textContent = ts; return; }
+    var dateStr = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    var timeStr = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    el.textContent = dateStr + ' at ' + timeStr;
+  })();
 </script>
 
 </body>
