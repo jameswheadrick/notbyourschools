@@ -1269,6 +1269,197 @@
       margin: 0;
     }
 
+    /* ─── VOTE / TIME-SENSITIVE ──────────────────────────── */
+    .vote-section {
+      background: var(--white);
+      border-top: 4px solid var(--red);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .vote-tag {
+      display: inline-flex;
+      align-items: center;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.69rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .vote-section h2 {
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .vote-section .body-copy { color: var(--text); }
+    .vote-section .body-copy strong { color: var(--navy); font-weight: 600; }
+
+    .vote-h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-top: 1.75rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .vote-actions {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0 1.25rem;
+    }
+
+    .vote-actions li {
+      margin-bottom: 0.65rem;
+      line-height: 1.7;
+      font-weight: 300;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .vote-actions li strong { color: var(--text); font-weight: 600; }
+
+    .vote-close {
+      background: var(--cream);
+      border-left: 3px solid var(--red);
+      border-radius: 0 4px 4px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0 2rem;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .address-block {
+      background: var(--cream);
+      border: 2px solid var(--navy);
+      border-radius: 6px;
+      padding: 1.5rem 1.4rem;
+      margin: 1.75rem 0 2rem;
+    }
+
+    .address-block-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+
+    .address-block-sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .address-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0 0 1.1rem;
+    }
+
+    .address-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.94rem;
+      line-height: 1.4;
+      color: var(--text);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.75rem;
+      align-items: baseline;
+    }
+
+    .address-list li:last-child { border-bottom: none; }
+
+    .address-list .address-name {
+      font-weight: 600;
+      color: var(--navy);
+      flex: 0 0 auto;
+    }
+
+    .address-list .address-email {
+      font-size: 0.88rem;
+      color: var(--navy);
+      user-select: all;
+      word-break: break-all;
+    }
+
+    .copy-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 12px rgba(184,50,40,0.28);
+    }
+
+    .copy-all-btn:hover { background: var(--red-hover); transform: translateY(-1px); }
+    .copy-all-btn.copied { background: var(--green); box-shadow: none; }
+
+    .address-verify {
+      display: block;
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      color: var(--navy);
+      opacity: 0.62;
+      text-decoration: none;
+    }
+
+    .address-verify:hover { opacity: 1; text-decoration: underline; }
+
+    .talking-points-intro {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin: 0.75rem 0 0.5rem;
+      font-weight: 300;
+    }
+
+    .talking-points-intro strong { color: var(--text); font-weight: 600; }
+
+    .talking-points {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .talking-points li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.7rem;
+      line-height: 1.65;
+      font-weight: 300;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .talking-points li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.62rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
     /* ─── URGENCY CALLOUT ────────────────────────────────── */
     .urgency-section {
       background: var(--navy);
@@ -1608,6 +1799,65 @@
       <a href="#action" class="hero-cta" data-track="hero_cta_main" data-track-location="hero">Make Your Voice Heard &rarr;</a>
       <a href="https://facebook.com/notbyourschools" target="_blank" rel="noopener" class="hero-cta-secondary" data-track="hero_facebook" data-track-location="hero">Follow on Facebook &rarr;</a>
     </div>
+  </div>
+</section>
+
+<!-- COUNCIL VOTE JULY 14 -->
+<section class="vote-section" id="vote">
+  <div class="section-inner">
+    <span class="vote-tag">Time-Sensitive &middot; July 14 Vote</span>
+    <h2>Show Up Tuesday, July 14. Email Council Before Then.</h2>
+
+    <p class="section-lead">Georgetown City Council meets <strong>Tuesday, July 14 at 6 PM (510 W 9th Street)</strong>. They'll be considering an update to the Future Land Use Map, which includes the Wilco Jail site.</p>
+
+    <p class="body-copy">The update would change the 253 acres the county purchased from <em>"Mixed Density Neighborhood"</em> to <em>"Institutional"</em> on the city's Future Land Use Map. In plain terms, the city's long-range plan would say a government complex belongs there. When the county files its zoning application later, staff gets to stamp it <em>"consistent with the comprehensive plan,"</em> and the hardest of the three council votes is already done.</p>
+
+    <p class="body-copy">The city's <strong>Planning and Zoning Commission</strong> already reviewed this and voted on <strong>June 16 to recommend denying</strong> the change for the county's site. Tuesday, City Council will consider whether to go with or against that recommendation.</p>
+
+    <p class="body-copy">Here's the part that should bother you no matter where you stand on the jail. <strong>A rezoning requires a notice period and opportunities for public comment. A map update doesn't.</strong> Most people near the site have no idea this is on Tuesday's agenda.</p>
+
+    <p class="body-copy">The ask is simple: council should uphold the P&amp;Z recommendation and leave the jail site out of this update. The land use question can wait for the county's actual application, when neighbors get real notice and the city still holds its negotiating cards for conditions like no on-foot releases, school protections, and traffic fixes.</p>
+
+    <h3 class="vote-h3">Three things to do</h3>
+    <ol class="vote-actions">
+      <li><strong>Email council before Tuesday.</strong> Ask them to uphold the P&amp;Z recommendation on Area 4. <a href="#addresses" data-track="vote_scroll_to_addresses" data-track-location="vote">See addresses and talking points below.</a></li>
+      <li><strong>Show up Tuesday, July 14, 6 PM at 510 W 9th Street.</strong> Sign up to speak before the session starts. You'll have 3 minutes, or up to 6 if someone gives up their time to you.</li>
+      <li><strong>Tell your neighbors.</strong> Post in your local Facebook groups. Most people don't know this is happening.</li>
+    </ol>
+
+    <p class="vote-close">The county hasn't even filed yet. The city's own commission saw no reason to answer this question early. Council shouldn't either.</p>
+
+    <div class="address-block" id="addresses">
+      <div class="address-block-heading">Email addresses</div>
+      <p class="address-block-sub">Copy all, or pick specific council members. The mayor is included.</p>
+
+      <ul class="address-list">
+        <li><span class="address-name">Mayor Josh Schroeder</span> <span class="address-email">josh.schroeder@georgetowntexas.gov</span></li>
+        <li><span class="address-name">Amanda Parr (D1)</span> <span class="address-email">amanda.parr@georgetowntexas.gov</span></li>
+        <li><span class="address-name">Shawn Hood (D2)</span> <span class="address-email">shawn.hood@georgetowntexas.gov</span></li>
+        <li><span class="address-name">Ben Butler (D3)</span> <span class="address-email">ben.butler@georgetowntexas.gov</span></li>
+        <li><span class="address-name">Ron Garland (D4)</span> <span class="address-email">ron.garland@georgetowntexas.gov</span></li>
+        <li><span class="address-name">Kevin Pitts (D5)</span> <span class="address-email">kevin.pitts@georgetowntexas.gov</span></li>
+        <li><span class="address-name">Jake French (D6)</span> <span class="address-email">jake.french@georgetowntexas.gov</span></li>
+        <li><span class="address-name">Ben Stewart (D7)</span> <span class="address-email">ben.stewart@georgetowntexas.gov</span></li>
+      </ul>
+
+      <button type="button" class="copy-all-btn" data-track="vote_copy_all_addresses" data-track-location="vote">Copy All Addresses</button>
+
+      <a class="address-verify" href="https://government.georgetown.org/city-council/" target="_blank" rel="noopener" data-track="vote_verify_addresses" data-track-location="vote">Verify current addresses on the city council page &rarr;</a>
+    </div>
+
+    <h3 class="vote-h3">Talking points</h3>
+    <p class="talking-points-intro"><strong>Write in your own words.</strong> A short personal email from a real neighbor carries more weight than a hundred copies of a form letter. Pick two or three points that matter to you:</p>
+
+    <ul class="talking-points">
+      <li>Ask council to uphold the P&amp;Z recommendation on Area 4, or at minimum sever it from the citywide update.</li>
+      <li>The county hasn't filed a zoning application yet. There's no deadline forcing this decision Tuesday.</li>
+      <li>Changing the map now gives away the city's strongest leverage for conditions like no on-foot releases, school protections, and traffic fixes, before a single condition is on paper.</li>
+      <li>A rezoning comes with notice and public comment. This map update didn't. Neighbors near the site deserve that process.</li>
+      <li>Nearly 1,700 students attend school within a half mile of this site.</li>
+      <li>Say where you live, especially if you're in Carlson Place, Saddle Creek, Maple Creek, or Churchill Farms. Council should hear this is their constituents' backyard.</li>
+    </ul>
   </div>
 </section>
 
@@ -2370,6 +2620,47 @@
     span.className = 'contact-info-email';
     span.textContent = email;
     info.appendChild(span);
+  });
+
+  // "Copy All Addresses" button in the July 14 vote section
+  document.querySelectorAll('.copy-all-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var list = document.querySelector('.address-list');
+      if (!list) return;
+      var emails = Array.prototype.slice.call(list.querySelectorAll('.address-email'))
+        .map(function(el) { return (el.textContent || '').trim(); })
+        .filter(Boolean);
+      var text = emails.join(', ');
+      var flash = function() {
+        var orig = btn.getAttribute('data-orig-text') || btn.textContent;
+        btn.setAttribute('data-orig-text', orig);
+        btn.textContent = '✓ Copied — paste into To or BCC';
+        btn.classList.add('copied');
+        setTimeout(function() {
+          btn.textContent = orig;
+          btn.classList.remove('copied');
+        }, 3000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(flash).catch(function() {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+          document.body.appendChild(ta);
+          ta.focus(); ta.select();
+          try { document.execCommand('copy'); flash(); } catch (e) {}
+          document.body.removeChild(ta);
+        });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        try { document.execCommand('copy'); flash(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
   });
 
   // Populate "Last updated" footer stamp from the HTML file's HTTP Last-Modified header
