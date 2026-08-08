@@ -858,146 +858,6 @@
       box-shadow: 0 4px 20px rgba(184,50,40,0.45);
     }
 
-    .letter-update {
-      background: var(--navy);
-      color: rgba(255,255,255,0.85);
-      border-radius: 4px;
-      padding: 1.75rem 1.6rem;
-      margin-bottom: 2.25rem;
-    }
-
-    .letter-update-tag {
-      display: inline-flex;
-      align-items: center;
-      background: var(--red);
-      color: var(--white);
-      font-size: 0.69rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 2px;
-      margin-bottom: 1rem;
-    }
-
-    .letter-update-heading {
-      font-family: 'DM Serif Display', serif;
-      color: var(--white);
-      font-size: clamp(1.3rem, 4vw, 1.7rem);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .letter-update p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 0.85rem;
-      font-weight: 300;
-    }
-
-    .letter-update p strong { color: var(--white); font-weight: 600; }
-    .letter-update p em { color: rgba(255,255,255,0.92); font-style: italic; }
-    .letter-update a {
-      color: var(--white);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.45);
-      transition: border-color 0.2s;
-    }
-    .letter-update a:hover { border-bottom-color: var(--white); }
-
-    .letter-update ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 1rem 0 1.25rem;
-    }
-
-    .letter-update ul li {
-      position: relative;
-      padding-left: 1.4rem;
-      margin-bottom: 0.85rem;
-      font-size: 0.95rem;
-      line-height: 1.65;
-      font-weight: 300;
-    }
-
-    .letter-update ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.6rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-    }
-
-    .letter-update ul li strong { color: var(--white); font-weight: 600; }
-    .letter-update ul li em { color: rgba(255,255,255,0.92); font-style: italic; }
-
-    .letter-update-quotes {
-      list-style: none;
-      padding: 0;
-      margin: 0.4rem 0 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-    }
-
-    .letter-update-quotes li {
-      border-left: 3px solid var(--red);
-      padding: 0.4rem 0 0.4rem 0.95rem;
-    }
-
-    .letter-update-quotes li::before { display: none; }
-
-    .letter-update-quotes blockquote {
-      font-style: italic;
-      color: rgba(255,255,255,0.93);
-      font-size: 0.93rem;
-      line-height: 1.6;
-      font-weight: 300;
-      margin: 0;
-    }
-
-    .letter-update-quotes cite {
-      display: block;
-      font-style: normal;
-      font-size: 0.76rem;
-      color: rgba(255,255,255,0.62);
-      margin-top: 0.4rem;
-      letter-spacing: 0.01em;
-    }
-
-    .letter-update-event {
-      background: rgba(255,255,255,0.07);
-      border-left: 3px solid var(--red);
-      padding: 1rem 1.1rem;
-      margin-top: 1.25rem;
-      border-radius: 0 4px 4px 0;
-      line-height: 1.6;
-    }
-
-    .letter-update-event-date {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      color: var(--white);
-      margin-bottom: 0.35rem;
-      letter-spacing: -0.005em;
-    }
-
-    .letter-update-event-where {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .letter-update-event-note {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.6);
-      margin-top: 0.7rem;
-      font-weight: 300;
-    }
-
     /* ─── QUOTE ──────────────────────────────────────────── */
     .quote-section { background: var(--cream); }
 
@@ -1784,119 +1644,6 @@
     .hero-inner > *:nth-child(3) { animation-delay: 0.31s; }
     .hero-inner > *:nth-child(4) { animation-delay: 0.44s; }
 
-    /* ─── EVENT CALLOUT ──────────────────────────────────── */
-    .event-callout {
-      background: var(--tan);
-      border-top: 4px solid var(--red);
-      padding: 2.5rem 1.5rem;
-    }
-
-    .event-inner {
-      max-width: 660px;
-      margin: 0 auto;
-    }
-
-    .event-tag {
-      display: inline-flex;
-      align-items: center;
-      background: var(--red);
-      color: var(--white);
-      font-size: 0.69rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 2px;
-      margin-bottom: 1rem;
-    }
-
-    .event-headline {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.5rem, 4vw, 1.9rem);
-      color: var(--navy);
-      line-height: 1.18;
-      letter-spacing: -0.01em;
-      margin-bottom: 1rem;
-    }
-
-    .event-body {
-      font-size: 1rem;
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 0.75rem;
-      font-weight: 300;
-    }
-
-    .event-body strong { color: var(--navy); font-weight: 600; }
-
-    .event-note {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-style: italic;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .event-cta {
-      display: inline-block;
-      background: var(--red);
-      color: var(--white);
-      text-decoration: none;
-      padding: 0.875rem 1.875rem;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border-radius: 3px;
-      letter-spacing: 0.02em;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 2px 14px rgba(184,50,40,0.35);
-    }
-
-    .event-cta:hover {
-      background: var(--red-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(184,50,40,0.48);
-    }
-
-    .event-lead {
-      font-size: 1rem;
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-    }
-
-    .event-lead strong { color: var(--navy); font-weight: 600; }
-
-    .event-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .event-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--red);
-      border-radius: 0 4px 4px 0;
-      padding: 1.4rem 1.5rem 1.6rem;
-    }
-
-    .event-item-date {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 0.45rem;
-    }
-
-    .event-item-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
-      color: var(--navy);
-      line-height: 1.25;
-      margin-bottom: 0.6rem;
-    }
   </style>
 </head>
 <body>
@@ -1929,7 +1676,8 @@
 </section>
 
 <!-- INPUT SESSIONS AUG 22 & 27 -->
-<section class="vote-section" id="vote">
+<a id="vote" aria-hidden="true" tabindex="-1"></a>
+<section class="vote-section" id="right-now">
   <div class="section-inner">
     <span class="vote-tag">Save the Date</span>
     <h2>Public input sessions. August 22 and 27.</h2>
@@ -2604,9 +2352,10 @@
 <section class="action-section" id="speak">
   <div class="section-inner">
     <span class="section-label">Show up in person</span>
-    <h2>Get ready to speak at City Council.</h2>
-    <p class="section-lead">Because the CR&nbsp;110 site is inside Georgetown city limits, any development will require a zoning change. That request will travel through the city's <strong>Planning &amp; Zoning Commission</strong> and then to <strong>City Council</strong>, with public hearings at each stop. Both are public meetings. Both take citizen comment on the record.</p>
-    <p class="section-lead">Agendas and the sign-up process for public comment are posted on the city's site. When a Justice Complex zoning item is listed, that is the moment to be in the room.</p>
+    <h2>Speak at Planning &amp; Zoning and City Council.</h2>
+    <p class="section-lead">The CR&nbsp;110 site is inside Georgetown city limits, and any development requires city approval. That happens through the <strong>Planning &amp; Zoning Commission</strong> and then <strong>City Council</strong>, both with public hearings on the record.</p>
+    <p class="section-lead">P&amp;Z already voted <strong>5&ndash;1 in June to recommend denying</strong> the Future Land Use Map change for this site, and Council <strong>pulled that item from its July&nbsp;14 agenda</strong> before it came to a vote. Both items can return, and the county's full zoning application still has not been filed. When either lands on an agenda, that is the moment to be in the room.</p>
+    <p class="section-lead">Agendas and the sign-up process for public comment are posted on the city's site.</p>
 
     <div class="action-note">
       <strong>What you can do now:</strong> Subscribe to updates below so you know the moment a related zoning item is posted, and email your council member ahead of time so they hear from constituents before staff briefings start.
