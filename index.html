@@ -1460,6 +1460,61 @@
       background: var(--red);
     }
 
+    .input-sessions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin: 1.25rem 0 1rem;
+    }
+
+    @media (min-width: 480px) { .input-sessions { grid-template-columns: 1fr 1fr; } }
+
+    .input-session-card {
+      background: var(--navy);
+      color: var(--white);
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+    }
+
+    .input-session-day {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      line-height: 1.2;
+      color: var(--white);
+    }
+
+    .input-session-time {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.78);
+      font-weight: 300;
+    }
+
+    .input-session-location {
+      background: var(--cream);
+      border-left: 3px solid var(--navy);
+      border-radius: 0 4px 4px 0;
+      padding: 0.85rem 1.15rem;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.55;
+    }
+
+    .input-session-location strong { color: var(--navy); font-weight: 600; }
+
+    .input-session-flyer {
+      display: inline-block;
+      font-size: 0.82rem;
+      color: var(--navy);
+      opacity: 0.65;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .input-session-flyer:hover { opacity: 1; text-decoration: underline; }
+
     /* ─── URGENCY CALLOUT ────────────────────────────────── */
     .urgency-section {
       background: var(--navy);
@@ -1802,19 +1857,54 @@
   </div>
 </section>
 
-<!-- JULY 14 VOTE - PULLED FROM AGENDA -->
+<!-- INPUT SESSIONS AUG 22 & 27 -->
 <section class="vote-section" id="vote">
   <div class="section-inner">
-    <span class="vote-tag">Update &middot; July 14</span>
-    <h2>The July 14 vote on Area 4 was pulled from the agenda.</h2>
+    <span class="vote-tag">Save the Date</span>
+    <h2>Public input sessions. August 22 and 27.</h2>
 
-    <p class="section-lead">The Future Land Use Map change for the county's Justice Complex site was <strong>removed from Georgetown City Council's Tuesday, July 14 agenda</strong>. No need to attend tonight. Thanks to everyone who emailed council and planned to show up &mdash; the pressure worked.</p>
+    <p class="section-lead">Save the date. Twice, actually. Williamson County is holding two public input sessions on the Justice Complex project. Show up. Bring a neighbor.</p>
 
-    <p class="body-copy">This buys time, not a decision. The item can be re-added to a future agenda, and the county's zoning application is still expected. When either lands, the same neighbors will need to weigh in again &mdash; and the sooner we know, the more time there is to organize a real response.</p>
+    <div class="input-sessions">
+      <div class="input-session-card">
+        <div class="input-session-day">Saturday, Aug 22</div>
+        <span class="input-session-time">9:30 to 11:30 AM</span>
+      </div>
+      <div class="input-session-card">
+        <div class="input-session-day">Thursday, Aug 27</div>
+        <span class="input-session-time">5:30 to 7:30 PM</span>
+      </div>
+    </div>
 
-    <p class="body-copy"><strong>Sign up for email updates so you know the moment the next action is needed.</strong> That's where you'll hear first &mdash; before the agenda posts, not after.</p>
+    <p class="input-session-location">Both at <strong>Williamson County EMS North Campus</strong>, 3189 S.E. Inner Loop, Georgetown, TX 78626.</p>
 
-    <a href="#updates" class="lockout-cta" data-track="vote_pulled_subscribe_cta" data-track-location="vote">Sign up for email updates &rarr;</a>
+    <a class="input-session-flyer" href="ListeningSessions.png" target="_blank" rel="noopener" data-track="input_sessions_flyer" data-track-location="vote">See the official county flyer &rarr;</a>
+
+    <h3 class="vote-h3">Here's why you need to be there.</h3>
+
+    <p class="body-copy">I spoke at commissioners court this Monday. The county wanted to move <strong>$420,000</strong> into what they're calling "community engagement" for this project. I pointed out that <strong>$300,000 of that was actually site design work</strong>, not engagement. Adjacency diagrams, building layouts, where the holding cells go. I also brought up that when they scored potential sites, <strong>Community Impact only counted for 3.5% of the decision</strong>, and that 3.5% only measured traffic. Not schools. Not neighborhoods. Traffic.</p>
+
+    <p class="body-copy">There's a real divide on that court right now. <strong>Boles, Snell, and Cook</strong> all raised concerns about the process and said they need to hear from the public before pushing any further. Boles went further than that. He questioned whether the county needs to build a new jail at all right now, and said it on the record: <em>"I don't think we need a new jail."</em></p>
+
+    <p class="body-copy">The full $420,000 request failed. What passed instead was a smaller version, about $140,000, for <strong>listening sessions only</strong>, with the design consultants kept out of the room.</p>
+
+    <h3 class="vote-h3">Don't play the design game.</h3>
+
+    <p class="body-copy">On August 22 and 27, the county is going to ask you to weigh in on what the site should look like. Building design. Layout. Landscaping.</p>
+
+    <p class="body-copy"><strong>Don't play that game.</strong></p>
+
+    <p class="vote-close">The question was never how this jail should look. The question is whether it belongs a third of a mile from Wagner Middle School and half a mile from Mitchell Elementary.</p>
+
+    <p class="body-copy">The city of Georgetown has already said inmate release is a major problem downtown, where there's transit, businesses, and services to support it. CR 110 has none of that. Moving that problem next to two schools full of kids doesn't get better because the building has nice landscaping.</p>
+
+    <p class="body-copy"><strong>They have other options. On the record. Sites that don't require this fight.</strong></p>
+
+    <p class="body-copy">If they want the courthouse and the Sheriff's office on this site, fine. That's a different conversation. But not a jail that releases people into a neighborhood with no infrastructure, a short walk from an elementary school and a middle school.</p>
+
+    <p class="body-copy"><strong>Show up on the 22nd or the 27th. Bring a neighbor. Don't get pulled into a conversation about paint colors and parking lots. Tell them clearly: this site doesn't work for a jail. No compromise.</strong></p>
+
+    <a href="#updates" class="lockout-cta" data-track="input_sessions_subscribe_cta" data-track-location="vote">Sign up for updates &rarr;</a>
   </div>
 </section>
 
