@@ -1515,6 +1515,77 @@
 
     .input-session-flyer:hover { opacity: 1; text-decoration: underline; }
 
+    /* ─── HISTORY ARCHIVE ────────────────────────────────── */
+    .history-section {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+    }
+
+    .history-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 2rem 0 0;
+      position: relative;
+    }
+
+    .history-list::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0.6rem;
+      bottom: 0.6rem;
+      width: 2px;
+      background: var(--navy);
+      opacity: 0.18;
+    }
+
+    .history-item {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 1.3rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+
+    @media (min-width: 560px) {
+      .history-item {
+        grid-template-columns: 140px 1fr;
+        gap: 1rem;
+        align-items: baseline;
+      }
+    }
+
+    .history-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 4px var(--cream);
+    }
+
+    .history-date {
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.98rem;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.005em;
+    }
+
+    .history-body {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text);
+      font-weight: 300;
+    }
+
+    .history-body strong { color: var(--navy); font-weight: 600; }
+    .history-body a { color: var(--navy); }
+
     /* ─── URGENCY CALLOUT ────────────────────────────────── */
     .urgency-section {
       background: var(--navy);
@@ -2571,21 +2642,51 @@
   </div>
 </section>
 
-<!-- POST-MEETING UPDATE -->
-<section>
+<!-- HISTORY ARCHIVE -->
+<section class="history-section" id="history">
   <div class="section-inner">
-    <div class="letter-update">
-      <span class="letter-update-tag">Update &middot; May 19, 2026</span>
-      <h2 class="letter-update-heading">This fight to stop this location isn't over.</h2>
-      <p>Today, commissioners heard over an hour of testimony from real residents, rooted in facts, lived experiences, and realistic questions. They acknowledged our concerns. <strong>Then voted 4&ndash;0 anyway.</strong></p>
-      <p>The next stop is Georgetown City Council, and we already have a seat at the table with <strong>Council Member Ben Stewart</strong>. He's engaged, he's listening, and he's committed to making sure this community has a voice in what comes next.</p>
-      <p>He hosted a community meeting at <strong>Carver Elementary on May&nbsp;21</strong> where neighbors gathered to organize for the zoning fight ahead. <a href="https://www.facebook.com/events/35505602349054858" target="_blank" rel="noopener" data-track="may19_update_stewart_event" data-track-location="post_meeting_update">Event page on Facebook &rarr;</a></p>
-      <p>Zoning approval has to go through City Council, and that's where this campaign goes from here.</p>
-      <p>If you haven't already, <a href="#updates" data-track="may19_update_newsletter" data-track-location="post_meeting_update">sign up for email updates</a>. That's where you'll hear first about next steps, meeting dates, and how to show up when it counts.</p>
-      <p>We're still waiting on the transcript from today's hearing. There's testimony after testimony on the record worth sharing, and we'll have more to say once it's in hand.</p>
-      <p>The commissioners had their minds made up before they walked in the room today. That much was clear.</p>
-      <p><strong>Stay with us. We're not done.</strong></p>
-    </div>
+    <span class="section-label">Previous Updates</span>
+    <h2>The story so far</h2>
+    <p class="section-lead">Key developments in this fight, in the order they happened. The evidence is spelled out in <a href="#location" data-track="history_to_case" data-track-location="history">The Case</a> above. This is the chronology.</p>
+
+    <ol class="history-list">
+      <li class="history-item">
+        <div class="history-date">March 9, 2026</div>
+        <div class="history-body"><strong>Purchase contract signed.</strong> County commits $75.8 million for 253 acres at CR 110 and Sam Houston. No public notice.</div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">March 24, 2026</div>
+        <div class="history-body"><strong>Public vote passes 5-0</strong> on an agenda item labeled "Assignment of Commercial Contract, Unimproved Property." No mention of a jail, a price, or nearby schools. <a href="#process" data-track="history_to_process" data-track-location="history">Full timeline &rarr;</a></div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">May 6, 2026</div>
+        <div class="history-body"><strong>Open-meetings letter delivered.</strong> Attorney Bill Aleshire sends County Judge Snell and County Attorney Dee Hobbs a formal letter citing the March 24 vote as a Texas Open Meetings Act violation and requesting a re-vote with a corrected agenda.</div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">May 12, 2026</div>
+        <div class="history-body"><strong>Commissioners Court agenda includes Items 42, 44, and 45</strong> on Justice Complex financing and reimbursement. No re-vote on the land purchase itself.</div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">May 19, 2026</div>
+        <div class="history-body"><strong>Commissioners vote 4-0 to proceed</strong> with the CR 110 site after over an hour of resident testimony. Next stop is Georgetown City Council for a zoning change.</div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">May 21, 2026</div>
+        <div class="history-body"><strong>Community meeting at Carver Elementary</strong> hosted by Council Member Ben Stewart. Neighbors gathered to organize for the zoning fight ahead.</div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">June 16, 2026</div>
+        <div class="history-body"><strong>Georgetown Planning &amp; Zoning Commission votes 5-1 to recommend denying</strong> the Future Land Use Map change for Area 4, the CR 110 site.</div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">July 14, 2026</div>
+        <div class="history-body"><strong>City Council's Area 4 vote was pulled</strong> from the agenda before the meeting. The Future Land Use Map change did not come to a vote.</div>
+      </li>
+      <li class="history-item">
+        <div class="history-date">August 4, 2026</div>
+        <div class="history-body"><strong>Court splits on the $420,000 "community engagement" request.</strong> $300,000 of it was site design work, not engagement. A $140,000 listening-sessions-only version passed instead, with design consultants kept out of the room. Boles, Snell, and Cook all raised concerns about the process before public input.</div>
+      </li>
+    </ol>
   </div>
 </section>
 
