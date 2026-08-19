@@ -1375,6 +1375,16 @@
 
     .input-session-flyer:hover { opacity: 1; text-decoration: underline; }
 
+    .right-now-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.9rem 1.25rem;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .right-now-actions .lockout-cta { margin-top: 0; }
+
     /* ─── HISTORY ARCHIVE ────────────────────────────────── */
     .history-section {
       background: var(--cream);
@@ -1679,12 +1689,12 @@
 <a id="vote" aria-hidden="true" tabindex="-1"></a>
 <section class="vote-section" id="right-now">
   <div class="section-inner">
-    <span class="vote-tag">Save the Date</span>
-    <h2>Public input sessions. August 22 and 27.</h2>
+    <span class="vote-tag">Show Up &middot; Tell Them No</span>
+    <h2>Show up. Tell them no to the site.</h2>
 
-    <p class="section-lead">Save the date. Twice, actually. Williamson County is holding two public input sessions on the Justice Complex project. Show up. Bring a neighbor.</p>
+    <p class="section-lead">Williamson County is holding two public feedback events for the Justice Center Jail &amp; Sheriff Office Complex. The county will ask for your input on building design and layout. <strong>Attend one. Tell them the CR&nbsp;110 site is wrong for a jail. No compromise on the site.</strong></p>
 
-    <div class="input-sessions">
+    <div class="input-sessions" id="input-dates">
       <div class="input-session-card">
         <div class="input-session-day">Saturday, Aug 22</div>
         <span class="input-session-time">9:30 to 11:30 AM</span>
@@ -1697,7 +1707,10 @@
 
     <p class="input-session-location">Both at <strong>Williamson County EMS North Campus</strong>, 3189 S.E. Inner Loop, Georgetown, TX 78626.</p>
 
-    <a class="input-session-flyer" href="ListeningSessions.png" target="_blank" rel="noopener" data-track="input_sessions_flyer" data-track-location="vote">See the official county flyer &rarr;</a>
+    <div class="right-now-actions">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Williamson+County+EMS+North+Campus+3189+SE+Inner+Loop+Georgetown+TX+78626" target="_blank" rel="noopener" class="lockout-cta" data-track="right_now_directions" data-track-location="right_now">Get Directions &rarr;</a>
+      <a class="input-session-flyer" href="ListeningSessions.png" target="_blank" rel="noopener" data-track="input_sessions_flyer" data-track-location="right_now">See the official county flyer &rarr;</a>
+    </div>
 
     <h3 class="vote-h3">Here's why you need to be there.</h3>
 
