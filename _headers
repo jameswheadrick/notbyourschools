@@ -1,6 +1,12 @@
 /*
   Cache-Control: public, max-age=86400
 
+/
+  Cache-Control: public, max-age=60, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=60, must-revalidate
+
 /og-image-v3.jpg
   Cache-Control: public, max-age=86400
   Access-Control-Allow-Origin: *
